@@ -12,7 +12,7 @@ grades.prob = grades.freq / rows
 
 # Define functions
 probs <- function(fromThis, chooseThis, thisSign){
-  return((grades.prob[[thisSign]] ^ chooseThis) * ((1 - grades.prob[[thisSign]]) ^ (fromThis - chooseThis)))
+  return(dbinom(chooseThis, size=fromThis, grades.prob[[thisSign]]))
 }
 
 # 4 of 9 subjects get A
