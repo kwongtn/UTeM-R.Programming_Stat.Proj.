@@ -26,19 +26,19 @@ Calculate the sample means, median, mode, variances, standard deviation and draw
 
 
 ## Question 2: Which Phone is the Best?
-Select THREE hand phone brands (e.g: X, Y, Z. Please put the brand name). Then, find 60 students who have hand phones with these brands and observe the condition (surface) either excellent, good, bad. Show your observation in a table. Suppose a hand phone is selected at random. Find the following probabilities:
+Select THREE hand phone brands (Samsung, Xiaomi, Apple). Then, find 60 students who have hand phones with these brands and observe the condition (surface) either excellent, good, bad. Show your observation in a table. Suppose a hand phone is selected at random. Find the following probabilities:
    
-> a) P (phone X and good)
+> a) P (phone "Samsung" and good)
 > 
-> b) P (bad and phone Z)
+> b) P (bad and phone "Apple")
 > 
-> c) P (phone X and Z)
+> c) P (phone "Samsung" and "Apple")
 > 
-> d) P (phone Y or good)
+> d) P (phone "Xiaomi" or good)
 > 
-> e) P (excellent or phone Y)
+> e) P (excellent or phone "Xiaomi")
 > 
-> f) P (phone Z or phone Y)
+> f) P (phone "Apple" or phone "Xiaomi")
 > 
 > g) Calculate the probability of the phone is good, given each of the brand that you have collected. 
 

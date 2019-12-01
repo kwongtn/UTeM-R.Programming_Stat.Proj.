@@ -23,14 +23,10 @@ and <- function(brandName, conditionStatus){
 }
 
 or <- function(brandName, conditionStatus){
-  return((brand.prob[[brandName]] + condition.prob[[conditionStatus]])-and(brand.prob[[brandName]], condition.prob[[conditionStatus]]
-  ))
+  return(brand.prob[[brandName]] + condition.prob[[conditionStatus]]-and(brandName, conditionStatus))
 }
 
 given <- function(brandName, conditionStatus, givenThat){
-  print(brandName)
-  print(conditionStatus)
-  print(givenThat)
   return( and(brandName, conditionStatus) / givenThat)
 }
 
