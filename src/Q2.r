@@ -17,6 +17,12 @@ condition.freq = table(condition)
 brand.prob = brand.freq / rows
 condition.prob = condition.freq / rows
 
+# Showing the results in a table
+cbind(brand.freq)
+print(" ")
+cbind(condition.freq)
+print(" ")
+
 # Defining functions
 and <- function(brandName, conditionStatus){
   return(brand.prob[[brandName]] * condition.prob[[conditionStatus]])

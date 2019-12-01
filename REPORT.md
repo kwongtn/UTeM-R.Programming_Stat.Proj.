@@ -35,7 +35,7 @@ Where each `A` and `B` refer to their own criteria.
   > 60 rows of data imported.NULL
   > ```
 
-- We then calculate the frequencies (E.g. How many times a brand or a condition happened) and the proportion of each data (E.g. What is a good phone's appearance proportion)
+- We then calculate the frequencies (E.g. How many times a brand or a condition happened) and the proportion of each data (E.g. What is a good phone's appearance proportion). The frequency table is then displayed.
   ```
   # Assigns brand and condition variables
   brand = Q2_data$phone_brand
@@ -48,7 +48,24 @@ Where each `A` and `B` refer to their own criteria.
   # Calculating the probablities of the occurences
   brand.prob = brand.freq / rows
   condition.prob = condition.freq / rows
+  
+  # Showing the results in a table
+  cbind(brand.freq)
+  cbind(condition.freq)
   ```
+    > Output:
+    > ```
+    >           brand.freq
+    > Apple           24
+    > Samsung         20
+    > Xiaomi          16
+    > 
+    >           condition.freq
+    > Bad                   28
+    > Excellent             13
+    > Good                  19
+    > ```
+
 
 - We then define functions for `and`, `or` and `givenThat`(conditional probability).
   - And
