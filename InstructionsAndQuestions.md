@@ -80,13 +80,13 @@ Collect data for the amount of lunch money spent per week from at least 60 stude
     c) Assume the data obtained are normally distributed. Is there any reason to believe that the proportion of engaging with part time is higher? 
 
     d)	Assume the data are normally distributed. By taking saving attitude as dependent variable, run a simple linear regression by using:  
-      i) Financial Awareness 
-
-      ii) Parents influence 
-
-      iii) Peer influence 
-
-      iv) Self-control
+      > i) Financial Awareness
+      > 
+      > ii) Parents influence 
+      >
+      > iii) Peer influence 
+      >
+      > iv) Self-control
 
     as independent variables. Construct a simple linear regression equation for every independent variable. Which of these independent variables affect most towards saving attitude?
 
