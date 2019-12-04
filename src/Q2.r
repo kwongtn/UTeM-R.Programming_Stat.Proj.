@@ -13,9 +13,14 @@ condition = Q2_data$condition
 brand.freq = table(brand)
 condition.freq = table(condition)
 
+# Calculating the occurence of each state
+dataOccurence = paste(Q2_data$phone_brand, Q2_data$condition)
+dataOccurence.freq = table(dataOccurence)
+
 # Calculating the probablities of the occurences
 brand.prob = brand.freq / rows
 condition.prob = condition.freq / rows
+dataOccurence.prob = dataOccurence.freq / rows
 
 # Showing the results in a table
 cbind(brand.freq)
@@ -32,8 +37,8 @@ or <- function(brandName, conditionStatus){
   return(brand.prob[[brandName]] + condition.prob[[conditionStatus]]-and(brandName, conditionStatus))
 }
 
-given <- function(brandName, conditionStatus, givenThat){
-  return( and(brandName, conditionStatus) / givenThat)
+given <- function(condition, givenThat){
+  return(dataOccurence.freq[[condition]] / givenThat)
 }
 
 # Calculating P(brand="Samsung" and condition="Good")
@@ -68,15 +73,15 @@ print("g)")
 
 # Calculate P(condition="Good" given that brand="Apple")
 print("- The probability that a phone is having a good condition given that it is branded 'Apple' is :")
-print(given("Apple", "Good", brand.prob[["Apple"]]))
+print(given("Apple Good", brand.freq[["Apple"]]))
 print(" ")
 
 # Calculate P(condition="Good" given that brand="Xiaomi")
 print("- The probability that a phone is having a good condition given that it is branded 'Xiaomi' is :")
-print(given("Xiaomi", "Good", brand.prob[["Xiaomi"]]))
+print(given("Xiaomi Good", brand.freq[["Xiaomi"]]))
 print(" ")
 
 # Calculate P(condition="Good" given that brand="Samsung")
 print("- The probability that a phone is having a good condition given that it is branded 'Samsung' is :")
-print(given("Samsung", "Good", brand.prob[["Samsung"]]))
+print(given("Samsung Good", brand.freq[["Samsung"]]))
 print(" ")

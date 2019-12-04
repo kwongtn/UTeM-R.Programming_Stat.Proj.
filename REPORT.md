@@ -44,10 +44,15 @@ Where each `A` and `B` refer to their own criteria.
   # Calculating the occurence of each attribute
   brand.freq = table(brand)
   condition.freq = table(condition)
+
+  # Calculating the occurence of each state
+  dataOccurence = paste(Q2_data$phone_brand, Q2_data$condition)
+  dataOccurence.freq = table(dataOccurence)
   
   # Calculating the probablities of the occurences
   brand.prob = brand.freq / rows
   condition.prob = condition.freq / rows
+  dataOccurence.prob = dataOccurence.freq / rows
   
   # Showing the results in a table
   cbind(brand.freq)
@@ -82,14 +87,13 @@ Where each `A` and `B` refer to their own criteria.
     ```
   - Given that (Conditional probability)
     ```
-    given <- function(brandName, conditionStatus, givenThat){
-    return( and(brandName, conditionStatus) / givenThat)
+    given <- function(condition, givenThat){
+    return(dataOccurence.freq[[condition]] / givenThat)
     }
     ```
   Where:
-    - [string] `brandname` is the brand name to be selected from the table
-    - [string] `conditionStatus` is the phone's condition to be selected from the table
-    - [long] `givenThat` is the probability of the source condition. (E.g. if wanting to evaluate P(A|B), then the value of P(B) should be passed.)
+    - [string] `condition` is the brand name and condition to be selected from the table.
+    - [long] `givenThat` is the frequency of the source condition. (E.g. if wanting to evaluate P(A|B), then the value of n(B) should be passed.)
 
 - We then input the variables based on the problem requirements:
   - The probability that a phone is branded `'Samsung'` and has `good` condition
@@ -144,29 +148,29 @@ Where each `A` and `B` refer to their own criteria.
   - The probability that a phone is having a good condition given a brand.
     - The probability that a phone is having a `good` condition given that it is branded `'Apple'`
     ```
-    print(given("Apple", "Good", brand.prob[["Apple"]]))
+    print(given("Apple Good", brand.freq[["Apple"]]))
     ```
     > Output:
     > ```
-    > [1] 0.3166667
+    > [1] 0.3333333
     > ```
 
     - The probability that a phone is having a `good` condition given that it is branded `'Xiaomi'`
     ```
-    print(given("Xiaomi", "Good", brand.prob[["Xiaomi"]]))
+    print(given("Xiaomi Good", brand.freq[["Xiaomi"]]))
     ```
     > Output:
     > ```
-    > [1] 0.3166667
+    > [1] 0.375
     > ```
 
     - The probability that a phone is having a `good` condition given that it is branded `'Samsung'`
     ```
-    print(given("Samsung", "Good", brand.prob[["Samsung"]]))
+    print(given("Samsung Good", brand.freq[["Samsung"]]))
     ```
     > Output:
     > ```
-    > [1] 0.3166667
+    > [1] 0.25
     > ```
 
   ### Conclusion
@@ -177,10 +181,10 @@ Where each `A` and `B` refer to their own criteria.
   - The probability that a phone is branded `'Xiaomi'` or have `good` condition is `0.4988889`
   - The probability that a phone is branded `'Xiaomi'` or have `excellent` condition is `0.4255556`
   - The probability that a phone is branded `'Xiaomi'` or `'Apple'` is `0.6666667`
-  - The probability that a phone is having a `good` condition given that it is branded `'Apple'` is `0.3166667`
-  - The probability that a phone is having a `good` condition given that it is branded `'Xiaomi'` is `0.3166667`
-  - The probability that a phone is having a `good` condition given that it is branded `'Samsung'` is `0.3166667`
-  - From the 3 previous results, we can also conclude that no phone brand is better as they are `equal` in producing `good` phones.
+  - The probability that a phone is having a `good` condition given that it is branded `'Apple'` is `0.3333333`
+  - The probability that a phone is having a `good` condition given that it is branded `'Xiaomi'` is `0.375`
+  - The probability that a phone is having a `good` condition given that it is branded `'Samsung'` is `0.25`
+  - From the 3 previous results, we can also conclude that `Xiaomi` is the best at creating `good` phones.
 
 ---
 ## Question 3
