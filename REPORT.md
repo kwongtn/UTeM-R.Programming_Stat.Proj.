@@ -227,6 +227,22 @@ Where :
   grades.prob = grades.freq / rows
   ```
 
+- We then output the frequency table of each grade occurence:
+  ```
+  cbind(grades.freq)
+  ```
+  > Output:
+  > ```
+  > [1] " "
+  >   grades.freq
+  > A          20
+  > B          14
+  > C          18
+  > D          18
+  > E          10
+  > F          20
+  > ```
+
 - We define a universal function that takes 3 arguments to output the happenings' probability based on the binomial model.
   ```
   probs <- function(fromThis, chooseThis, thisSign){

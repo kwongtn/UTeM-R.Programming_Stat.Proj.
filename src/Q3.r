@@ -15,6 +15,10 @@ probs <- function(fromThis, chooseThis, thisSign){
   return(dbinom(chooseThis, size=fromThis, grades.prob[[thisSign]]))
 }
 
+# To display the frequencied of each grades
+cbind(grades.freq)
+print("")
+
 # 4 of 9 subjects get A
 print("The probability of 4/9 subjects getting A is :")
 print(probs(9, 4, "A"))
