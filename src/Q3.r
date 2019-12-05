@@ -1,5 +1,5 @@
 # Import data
-Q3_data <- read.csv("~/GIT-Code/UTeM-R.Programming_Stat.Project/src/data/Q3_data.txt", sep="")
+Q3_data <- read.csv("./data/Q3_data.txt", sep="")
 View(Q3_data)
 rows = nrow(Q3_data)
 print(cat(rows, "rows of data imported."))
