@@ -1,6 +1,144 @@
 # Report
 
 ## Question 1
+This question requires us to calculate the sample means, medians, modes, variances and standard deviations from the `UTC visitor's statistic year 2013-17` dataset. 
+It also requests us to draw a graph to summarize features that draw a distinction between the visitor satistics to conclude and inference on the reasons of the data occurences.
+`We are only required to do the above for areas "Perak", "Melaka" and "Wilayah Persekutuan Kuala Lumpur"`
+
+The [UTC visitor’s statistic year 2013-2017](http://www.data.gov.my/data/dataset/028b136e-fcbf-426f-9a52-2de2a21cfbef/resource/ce75b7bf-9740-45d1-b703-3372e7001cab/download/statistik-utc-negeri-mengikut-bulan-2013-2017.xlsx) dataset was downloaded from the govenment's open data webpage. It describes the number of visitors visiting the Urban Transformation Center in each state every month.
+
+As we are calculating the mean, median, variance and standard deviation of the data, we will using the following formulae:
+
+- Mean of a sample
+
+
+- Median of a sample
+
+
+- Variance of a sample
+
+
+- Standard deviation of a sample
+
+
+### The following codes were used (output line breaks are omitted):
+- We first import the data requried:
+```
+library(readxl)
+
+# Import the dataset
+data <- read_xlsx("./data/utc_stat.xlsx", 1)
+
+# Select only Melaka, WP KL, and Perak States data
+year_char <- data[-1,2]
+melaka_visitor <- data[-1,3]
+wp_visitor <- data[-1,4]
+perak_visitor <- data[-1,5]
+```
+
+- We then preprocess the data:
+```
+# Convert dataframe to numerical variables
+melaka_visitor = as.numeric(unlist(melaka_visitor))
+wp_visitor = as.numeric(unlist(wp_visitor))
+perak_visitor = as.numeric(unlist(perak_visitor))
+
+# Create a new dataframe of only this 3 states data
+States_df <- data.frame(year_char,melaka_visitor, wp_visitor, perak_visitor)
+```
+
+- We then calculate the values based on the problem requirements:
+  - Mean
+    ```
+    mean_melaka = mean(melaka_visitor)
+    mean_wp = mean(wp_visitor)
+    mean_perak = mean(perak_visitor)
+    ```
+  - Median
+    ```
+    median_melaka = median(melaka_visitor)
+    median_wp = median(wp_visitor)
+    median_perak = median(perak_visitor)
+    ```
+  - Mode
+    ```
+    mode_melaka = max(melaka_visitor)
+    mode_wp = max(wp_visitor)
+    mode_perak = max(perak_visitor)
+    ```
+  - Variance
+    ```
+    var_melaka = var(melaka_visitor)
+    var_wp = var(wp_visitor)
+    var_perak = var(perak_visitor)
+    ```
+  - Standard Deviation
+    ```
+    sd_melaka = var(melaka_visitor)
+    sd_wp = var(wp_visitor)
+    sd_perak = var(perak_visitor)
+    ```
+
+- The barplots are then drawn:
+  - Barplots of Melaka States Visitor
+    ```
+    barplot(States_df$melaka_visitor, main = "Bar Plots of Melaka States Visitor", col="skyblue")
+    ```
+    Output:
+    > ![Bar Plots of Melaka States Visitor](./images/Q1_BarPlot-Melaka.png)
+  - Barplots of WP States Visitor
+    ```
+    barplot(States_df$wp_visitor, main = "Bar Plots of WP States Visitor", col="green")
+    ```
+    Output:
+    > ![Bar Plots of WP States Visitor](./images/Q1_BarPlot-WP.png)
+  - Barplots of Perak States Visitor
+    ```  
+    barplot(States_df$perak_visitor, main = "Bar Plots of Perak States Visitor", col="red")
+    ```
+    Output:
+    > ![Bar Plots of Perak States Visitor](./images/Q1_BarPlot-Perak.png)
+
+- The density plots are then drawn:
+  - Density plot of Melaka States Visitor
+    ```
+    plot(density(States_df$melaka_visitor), main = "Density of melaka visitor", col="skyblue" )
+    ```
+    Output:
+    > ![Density Plots of Perak States Visitor](./images/Q1_Density-Perak.png)
+  - Density plot of WP States Visitor
+    ```
+    plot(density(States_df$wp_visitor), main = "Density of WP visitor", col="green" )
+    ```
+    Output:
+    > ![Density Plots of WP States Visitor](./images/Q1_Density-WP.png)
+  - Density plot of Perak States Visitor
+    ```
+    plot(density(States_df$perak_visitor), main = "Density of Perak visitor", col="red" )
+    ```
+    Output:
+    > ![Density Plots of Perak States Visitor](./images/Q1_Density-Perak.png)
+    
+- The combined chart for visitors of each state with respect of month was then plotted:
+  ```
+  plot(States_df$perak_visitor,type = "o",col = "red", xlab = "Month", ylab = "Number of visitor", 
+       main = "Melaka, WP and Perak Visitor Chart")
+  lines(States_df$wp_visitor, type = "o", col = "green")
+  lines(States_df$melaka_visitor, type = "o", col = "skyblue")
+  legend("topright", legend=c("Perak", "WP", "Melaka"),col=c("red", "green","skyblue"), lty=1, cex=0.8)
+  ```
+  Output:
+  > ![Combined line chart of visitors of each state](./images/Q1_CombinedBar.png)
+
+- The results were outputted:
+  ```
+  cat("Result:\n\n Mean Melaka:",mean_melaka,"\n Mean WP:",mean_wp,"\n Mean Perak:",mean_perak,"\n \n Median Melaka:",median_melaka,"\n Median WP:",median_wp,"\n Median Perak:",median_perak,"\n \n Mode Melaka:", mode_melaka,"\n Mode WP:", mode_wp,"\n Mode Perak:", mode_perak,"\n\n Variance Melaka:", var_melaka, "\n Variance WP:", var_wp, "\n Variance Perak:",var_perak,"\n\n SD Melaka:",sd_melaka,"\n SD WP:",sd_wp,"\n SD Perak:",sd_perak)
+  ```
+  Output:
+  >
+
+  ### Conclusion
+  
 
 ---
 ## Question 2
@@ -11,13 +149,13 @@ This question presents a problem to calculate the probability of getting a speci
 As we are only evaluating probabilities of a given scenario, we therefore will be using the following formulae:
 
 - Probability of A and B (Intercept)  
-![Probability of A Intercept B](./images/andProbability.png)
+![Probability of A Intercept B](./images/Q2_andProbability.png)
 
 - Probability of A or B (Union)  
-![Probability of A Union B](./images/orProbability.png)
+![Probability of A Union B](./images/Q2_orProbability.png)
 
 - Conditional Probability  
-![Conditional Probability Formula](./images/conditionalProbability.png)
+![Conditional Probability Formula](./images/Q2_conditionalProbability.png)
 
 Where each `A` and `B` refer to their own criteria.
 
