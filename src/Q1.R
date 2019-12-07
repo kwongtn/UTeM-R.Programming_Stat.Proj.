@@ -35,9 +35,9 @@ var_wp = var(wp_visitor)
 var_perak = var(perak_visitor)
 
 # Standard deviation of visitors in between melaka, Wilayah Persekutuan KL and Perak
-sd_melaka = var(melaka_visitor)
-sd_wp = var(wp_visitor)
-sd_perak = var(perak_visitor)
+sd_melaka = sd(melaka_visitor)
+sd_wp = sd(wp_visitor)
+sd_perak = sd(perak_visitor)
 
 # Create a new dataframe of only this 3 states data
 States_df <- data.frame(year_char,melaka_visitor, wp_visitor, perak_visitor)
