@@ -855,3 +855,202 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     > 4            0.35000000
     > 5            0.33333333
     > ```
+
+- We then calculate the percentage distribution of each column:
+  - Gender
+    ```
+    gender.percentageDist = gender.relFreq * 100
+    print(cbind(gender.percentageDist))
+    ```
+    > Output:
+    > ```
+    >        gender.percentageDist
+    > Female              46.66667
+    > Male                53.33333
+    > ```
+  - Age
+    ```
+    age.percentageDist = age.relFreq * 100
+    print(cbind(age.percentageDist))
+    ```
+    > Output:
+    > ```
+    >      age.percentageDist
+    > 19.5          40.000000
+    > 21.5          53.333333
+    > 24             6.666667
+    > ```
+  - Saving Habit
+    ```
+    faculty.percentageDist = faculty.relFreq * 100
+    print(cbind(faculty.percentageDist))
+    ```
+    > Output:
+    > ```
+    >       faculty.percentageDist
+    > FKE                13.333333
+    > FKM                 6.666667
+    > FKP                 5.000000
+    > FPTT                5.000000
+    > FTKEE               3.333333
+    > FTMK               66.666667
+    > ```
+  - Allowance
+    ```
+    allowance.percentageDist = allowance.relFreq * 100
+    print(cbind(allowance.percentageDist))
+    ```
+    > Output:
+    > ```
+    >       allowance.percentageDist
+    > 100                   51.66667
+    > 350.5                 36.66667
+    > 650.5                 11.66667
+    > ```
+  - If student is taking a part time job:
+    ```
+    partTime.percentageDist = partTime.relFreq * 100
+    print(cbind(partTime.percentageDist))
+    ```
+    > Output:
+    > ```
+    >     partTime.percentageDist
+    > No                 83.33333
+    > Yes                16.66667
+    > ```
+  - If a student has difficulty in managing money:
+    ```
+    MoneyMgmtDifficulty.percentageDist = MoneyMgmtDifficulty.relFreq * 100
+    print(cbind(MoneyMgmtDifficulty.percentageDist))
+    ```
+    > Output:
+    > ```
+    >   MoneyMgmtDifficulty.percentageDist
+    > 1                           6.666667
+    > 2                          11.666667
+    > 3                          41.666667
+    > 4                          26.666667
+    > 5                          13.333333
+    > ```
+  - If the student has ability to prepare his/her own weekly/monthly budget:
+    ```
+    abilityPrepareBudget.percentageDist = abilityPrepareBudget.relFreq * 100
+    print(cbind(abilityPrepareBudget.percentageDist))
+    ```
+    > Output:
+    > ```
+    >   abilityPrepareBudget.percentageDist
+    > 2                            21.66667
+    > 3                            45.00000
+    > 4                            18.33333
+    > 5                            15.00000
+    > ```
+  - If the student's parents' are good examples when it comes to money management:
+    ```
+    parentsGoodExample.percentageDist = parentsGoodExample.relFreq * 100
+    print(cbind(parentsGoodExample.percentageDist))
+    ```
+    > Output:
+    > ```
+    >   parentsGoodExample.percentageDist
+    > 2                                 5
+    > 3                                35
+    > 4                                35
+    > 5                                25
+    > ```
+  - If the student appreciate it when parents give advice about what to do with money:
+    ```
+    appreciateAdvice.percentageDist = appreciateAdvice.relFreq * 100
+    print(cbind(appreciateAdvice.percentageDist))
+    ```
+    > Output:
+    > ```
+    >   appreciateAdvice.percentageDist
+    > 2                        1.666667
+    > 3                       26.666667
+    > 4                       38.333333
+    > 5                       33.333333
+    > ```
+  - If friends do regularly save with savings account:
+    ```
+    friendsSaveRegularly.percentageDist = friendsSaveRegularly.relFreq * 100
+    print(cbind(friendsSaveRegularly.percentageDist))
+    ```
+    > Output:
+    > ```
+    >   friendsSaveRegularly.percentageDist
+    > 1                            6.666667
+    > 2                           25.000000
+    > 3                           30.000000
+    > 4                           26.666667
+    > 5                           11.666667
+    > ```
+  - If the student regularly discusses about money management issue (saving) with friends:
+    ```
+    discussWithFriends.percentageDist = discussWithFriends.relFreq * 100
+    print(cbind(discussWithFriends.percentageDist))
+    ```
+    > Output:
+    > ```
+    >   discussWithFriends.percentageDist
+    > 1                          11.66667
+    > 2                          31.66667
+    > 3                          38.33333
+    > 4                          13.33333
+    > 5                           5.00000
+    > ```
+  - If "buy now, think later" describes them:
+    ```
+    buyNowThinkLater.percentageDist = buyNowThinkLater.relFreq * 100
+    print(cbind(buyNowThinkLater.percentageDist))
+    ```
+    > Output:
+    > ```
+    >   buyNowThinkLater.percentageDist
+    > 1                       28.333333
+    > 2                       16.666667
+    > 3                       33.333333
+    > 4                       15.000000
+    > 5                        6.666667
+    > ```
+  - If rarely achieve saving goals:
+    ```
+    rarelyAchieveGoal.percentageDist = rarelyAchieveGoal.relFreq * 100
+    print(cbind(rarelyAchieveGoal.percentageDist))
+    ```
+    > Output:
+    > ```
+    >   rarelyAchieveGoal.percentageDist
+    > 1                         5.000000
+    > 2                        20.000000
+    > 3                        41.666667
+    > 4                        25.000000
+    > 5                         8.333333
+    > ```
+  - If put money aside on a regular basis for the future:
+    ```
+    putMoneyAside.percentageDist = putMoneyAside.relFreq * 100
+    print(cbind(putMoneyAside.percentageDist))
+    ```
+    > Output:
+    > ```
+    >   putMoneyAside.percentageDist
+    > 1                     8.333333
+    > 2                     3.333333
+    > 3                    45.000000
+    > 4                    35.000000
+    > 5                     8.333333
+    > ```
+  - If often compare prices before making a purchase:
+    ```
+    comparePrices.percentageDist = comparePrices.relFreq * 100
+    print(cbind(comparePrices.percentageDist))
+    ```
+    > Output:
+    > ```
+    >   comparePrices.percentageDist
+    > 2                     8.333333
+    > 3                    23.333333
+    > 4                    35.000000
+    > 5                    33.333333
+    > ```
