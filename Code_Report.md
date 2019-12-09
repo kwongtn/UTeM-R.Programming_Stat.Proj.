@@ -337,7 +337,7 @@ This question presents a problem to calculate the probability of a student getti
 > - The probabilities are constant for each trial (it is calculated from historic data and no data will be added throughout the calculations)
 
 As such, we use the binomial distribution fomula as shown below:
-![Binomial Distribution Formula](./images/binomialDistributionFormula.png)
+![Binomial Distribution Formula](./images/Q3_binomialDistributionFormula.png)
 
 Where :
 - `n = number of subjects` , 
@@ -439,31 +439,19 @@ Where :
 ## Question 4
 
 
-
+---
 ## Question 5
-Refer to [Q5 Report](./Q5_Report.md) for reporting style stuff.
+Refer to [Q5 Report](./Q5_Report.md) for reporting style stuff.  
 
 This question presents problems for data analysis on the Saving Habits of students in UTeM. [This dataset](./src/data/Q5_SavingHabit_cleaned.md) was obtained via a Google Form with the questions as defined [here](./src/data/Q5_questionnaire.md).  
 We will therefore be discussing the outputs and rationalle behind the commands used in the script.
 
 ### The following codes were used (output line breaks are omitted):
 - We first import the dataset and view it:
-```
-savingHabit <- read.delim("./data/Q5_SavingHabit_cleaned.txt")
-View(savingHabit)
-rows=nrow(savingHabit)
-```
-> Output:
-> ```
-> 60 rows of data imported.NULL
-> ```
-
-- We then calculate the frequencies of each column:
-  - Gender
   ```
-  gender.freq = table(savingHabit$Gender)
-  print("The frequency table for Gender is :")
-  print(cbind(gender.freq))
+  savingHabit <- read.delim("./data/Q5_SavingHabit_cleaned.txt")
+  View(savingHabit)
+  rows=nrow(savingHabit)
   ```
   > Output:
   > ```
