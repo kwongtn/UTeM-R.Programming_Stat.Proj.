@@ -74,10 +74,17 @@ States_df <- data.frame(year_char,melaka_visitor, wp_visitor, perak_visitor)
     ```
   - Standard Deviation
     ```
-    sd_melaka = var(melaka_visitor)
-    sd_wp = var(wp_visitor)
-    sd_perak = var(perak_visitor)
+    sd_melaka = sd(melaka_visitor)
+    sd_wp = sd(wp_visitor)
+    sd_perak = sd(perak_visitor)
     ```
+
+- The results were outputted:
+  ```
+  cat("Result:\n\n Mean Melaka:",mean_melaka,"\n Mean WP:",mean_wp,"\n Mean Perak:",mean_perak,"\n \n Median Melaka:",median_melaka,"\n Median WP:",median_wp,"\n Median Perak:",median_perak,"\n \n Mode Melaka:", mode_melaka,"\n Mode WP:", mode_wp,"\n Mode Perak:", mode_perak,"\n\n Variance Melaka:", var_melaka, "\n Variance WP:", var_wp, "\n Variance Perak:",var_perak,"\n\n SD Melaka:",sd_melaka,"\n SD WP:",sd_wp,"\n SD Perak:",sd_perak)
+  ```
+  Output:
+  >
 
 - The barplots are then drawn:
   - Barplots of Melaka States Visitor
@@ -129,13 +136,6 @@ States_df <- data.frame(year_char,melaka_visitor, wp_visitor, perak_visitor)
   ```
   Output:
   > ![Combined line chart of visitors of each state](./images/Q1_CombinedBar.png)
-
-- The results were outputted:
-  ```
-  cat("Result:\n\n Mean Melaka:",mean_melaka,"\n Mean WP:",mean_wp,"\n Mean Perak:",mean_perak,"\n \n Median Melaka:",median_melaka,"\n Median WP:",median_wp,"\n Median Perak:",median_perak,"\n \n Mode Melaka:", mode_melaka,"\n Mode WP:", mode_wp,"\n Mode Perak:", mode_perak,"\n\n Variance Melaka:", var_melaka, "\n Variance WP:", var_wp, "\n Variance Perak:",var_perak,"\n\n SD Melaka:",sd_melaka,"\n SD WP:",sd_wp,"\n SD Perak:",sd_perak)
-  ```
-  Output:
-  >
 
   ### Conclusion
   
