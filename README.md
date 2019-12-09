@@ -1,7 +1,8 @@
 # UTeM-R.Programming_Stat.Proj.
 
 [Instructions and Questions](./InstructionsAndQuestions.md)  
-[Answers and Rationalle](./REPORT.md)
+[Answers and Rationalle](./Code_Report.md)
+[Full report to be submited](./REPORT.md)
 
 # Group Members
 - Kwong Tung Nan    (B031810219)
