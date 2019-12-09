@@ -1,5 +1,5 @@
 # Import data
-Q2_data <- read.delim("~/GIT-Code/UTeM-R.Programming_Stat.Project/src/data/Q2_data.txt")
+Q2_data <- read.delim("./data/Q2_data.txt")
 View(Q2_data)
 rows = nrow(Q2_data)
 print(cat(rows, "rows of data imported."))

@@ -1,7 +1,7 @@
 library(readxl)
 
 # Import the dataset
-data <- read_xlsx("C:\\Assignment1\\utc_stat.xlsx", 1)
+data <- read_xlsx("./data/utc_stat.xlsx", 1)
 
 # Select only Melaka, WP KL, and Perak States data
 year_char <- data[-1,2]
@@ -39,7 +39,7 @@ sd_melaka = sd(melaka_visitor)
 sd_wp = sd(wp_visitor)
 sd_perak = sd(perak_visitor)
 
-# Creates a new dataframe of only this 3 states data
+# Create a new dataframe of only this 3 states data
 States_df <- data.frame(year_char,melaka_visitor, wp_visitor, perak_visitor)
 
 barplot(States_df$melaka_visitor, main = "Bar Plots of Melaka States Visitor", col="skyblue")
