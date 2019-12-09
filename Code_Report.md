@@ -1062,7 +1062,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(gender.freq, main = "Frequency of Gender")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![Gender Bar Chart](./images/Q5_Bar-gender.jpg)
   - Age
     ```
@@ -1070,7 +1070,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(age.freq, main = "Frequency of Age (Midpoint of bins)")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![Age Bar Chart](./images/Q5_Bar-age.jpg)
   - Saving Habit
     ```
@@ -1078,7 +1078,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(faculty.freq, main = "Frequency of Faculty")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![Saving Habit Bar Chart](./images/Q5_Bar-faculty.jpg)
   - Allowance
     ```
@@ -1086,7 +1086,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(allowance.freq, main = "Frequency of Allowance (Midpoint of bins)")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![Allowance Bar Chart](./images/Q5_Bar-allowance.jpg)
   - If student is taking a part time job:
     ```
@@ -1094,7 +1094,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(partTime.freq, main = "Frequency of Part Time Job engagement")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![If student is taking a part time job: Bar Chart](./images/Q5_Bar-partTime.jpg)
   - If a student has difficulty in managing money:
     ```
@@ -1102,7 +1102,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(MoneyMgmtDifficulty.freq, main = "Frequency of money management difficulty rating")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![If a student has difficulty in managing money: Bar Chart](./images/Q5_Bar-MoneyMgmtDifficulty.jpg)
   - If the student has ability to prepare his/her own weekly/monthly budget:
     ```
@@ -1110,7 +1110,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(abilityPrepareBudget.freq, main = "Frequency of budget preparing ability rating")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![If the student has ability to prepare his/her own weekly/monthly budget: Bar Chart](./images/Q5_Bar-abilityPrepareBudget.jpg)
   - If the student's parents' are good examples when it comes to money management:
     ```
@@ -1118,7 +1118,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(parentsGoodExample.freq, main = "Frequency of if parents are good example rating")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![If the student's parents' are good examples when it comes to money management: Bar Chart](./images/Q5_Bar-parentsGoodExample.jpg)
   - If the student appreciate it when parents give advice about what to do with money:
     ```
@@ -1126,7 +1126,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(appreciateAdvice.freq, main = "Frequency of parents' advice appreciation rating")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![If the student appreciate it when parents give advice about what to do with money: Bar Chart](./images/Q5_Bar-appreciateAdvice.jpg)
   - If friends do regularly save with savings account:
     ```
@@ -1134,7 +1134,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(friendsSaveRegularly.freq, main = "Frequency of if friends save regularly rating")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![If friends do regularly save with savings account: Bar Chart](./images/Q5_Bar-friendsSaveRegularly.jpg)
   - If the student regularly discusses about money management issue (saving) with friends:
     ```
@@ -1142,7 +1142,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(discussWithFriends.freq, main = "Frequency of if discuss savings with friends rating")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![If the student regularly discusses about money management issue (saving) with friends: Bar Chart](./images/Q5_Bar-discussWithFriends.jpg)
   - If "buy now, think later" describes them:
     ```
@@ -1150,7 +1150,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(buyNowThinkLater.freq, main = "Frequency of buy now think later rating")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![If "buy now, think later" describes them: Bar Chart](./images/Q5_Bar-buyNowThinkLater.jpg)
   - If rarely achieve saving goals:
     ```
@@ -1158,7 +1158,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(rarelyAchieveGoal.freq, main = "Frequency of rarely achieving goal rating")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![If rarely achieve saving goals: Bar Chart](./images/Q5_Bar-rarelyAchieveGoal.jpg)
   - If put money aside on a regular basis for the future:
     ```
@@ -1166,7 +1166,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(putMoneyAside.freq, main = "Frequency of putting money aside rating")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![If put money aside on a regular basis for the future: Bar Chart](./images/Q5_Bar-putMoneyAside.jpg)
   - If often compare prices before making a purchase:
     ```
@@ -1174,6 +1174,6 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     barplot(comparePrices.freq, main = "Frequency of compare prices before making purchases rating")
     dev.off()
     ```
-    > Output:
+    > Output:  
     > ![If often compare prices before making a purchase: Bar Chart](./images/Q5_Bar-comparePrices.jpg)
 
