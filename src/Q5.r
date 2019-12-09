@@ -1,9 +1,11 @@
+# Preliminary steps
 savingHabit <- read.delim("./data/Q5_SavingHabit_cleaned.txt")
 View(savingHabit)
 rows=nrow(savingHabit)
 print(cat(rows, "rows of data imported."))
 
-# Calculating frequency
+# <Q5_2(a)>
+## Calculating frequency
 gender.freq = table(savingHabit$Gender)
 print("The frequency table for Gender is :")
 print(cbind(gender.freq))
@@ -65,7 +67,7 @@ print("The frequency table for ComparePrices is :")
 print(cbind(comparePrices.freq))
 print("")
 
-# Calculating Relative Frequency
+## Calculating Relative Frequency
 gender.relFreq = table(savingHabit$Gender) / rows
 print("The relative frequency table for Gender is: ")
 print(cbind(gender.relFreq))
@@ -127,7 +129,7 @@ print("The relative frequency table for ComparePrices is: ")
 print(cbind(comparePrices.relFreq))
 print("")
 
-# Calculating percentage distribution
+## Calculating percentage distribution
 gender.percentageDist = gender.relFreq * 100
 print(cbind(gender.percentageDist))
 print("")
@@ -174,7 +176,7 @@ comparePrices.percentageDist = comparePrices.relFreq * 100
 print(cbind(comparePrices.percentageDist))
 print("")
 
-# Output all bar charts into its relative jpg files in /images/
+## Output all bar charts into its relative jpg files in /images/
 jpeg("../images/Q5_Bar-gender.jpg")
 barplot(gender.freq, main = "Frequency of Gender")
 dev.off()
@@ -221,7 +223,7 @@ jpeg("../images/Q5_Bar-comparePrices.jpg")
 barplot(comparePrices.freq, main = "Frequency of compare prices before making purchases rating")
 dev.off()
 
-# Output all pie charts into its relative jpg files in /images/
+## Output all pie charts into its relative jpg files in /images/
 jpeg("../images/Q5_Pie-gender.jpg")
 pie(gender.percentageDist, main="Percentage Distribution of Gender")
 dev.off()
@@ -267,3 +269,6 @@ dev.off()
 jpeg("../images/Q5_Pie-comparePrices.jpg")
 pie(comparePrices.percentageDist, main="Percentage Distribution of compare prices before making purchases rating")
 dev.off()
+# </Q5_2(a)>
+
+# <Q5_2(a)>
