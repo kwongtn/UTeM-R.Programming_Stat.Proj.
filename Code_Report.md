@@ -1177,3 +1177,124 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     > Output:  
     > ![If often compare prices before making a purchase: Bar Chart](./images/Q5_Bar-comparePrices.jpg)
 
+- We then generate pie charts based on the percentage distribution:
+  - Gender
+    ```
+    jpeg("../images/Q5_Pie-gender.jpg")
+    pie(gender.percentageDist, main="Percentage Distribution of Gender")
+    dev.off()
+    ```
+    > Output:  
+    > ![Gender Pie Chart](./images/Q5_Pie-gender.jpg)
+  - Age
+    ```
+    jpeg("../images/Q5_Pie-age.jpg")
+    pie(age.percentageDist, main="Percentage Distribution of Age (Midpoint of bins)")
+    dev.off()
+    ```
+    > Output:  
+    > ![Age Pie Chart](./images/Q5_Pie-age.jpg)
+  - Saving Habit
+    ```
+    jpeg("../images/Q5_Pie-faculty.jpg")
+    pie(faculty.percentageDist, main="Percentage Distribution of Faculty")
+    dev.off()
+    ```
+    > Output:  
+    > ![Saving Habit Pie Chart](./images/Q5_Pie-faculty.jpg)
+  - Allowance
+    ```
+    jpeg("../images/Q5_Pie-allowance.jpg")
+    pie(allowance.percentageDist, main="Percentage Distribution of Allowance (Midpoint of bins)")
+    dev.off()
+    ```
+    > Output:  
+    > ![Allowance Pie Chart](./images/Q5_Pie-allowance.jpg)
+  - If student is taking a part time job:
+    ```
+    jpeg("../images/Q5_Pie-partTime.jpg")
+    pie(partTime.percentageDist, main="Percentage Distribution of Part Time Job engagement")
+    dev.off()
+    ```
+    > Output:  
+    > ![If student is taking a part time job: Pie Chart](./images/Q5_Pie-partTime.jpg)
+  - If a student has difficulty in managing money:
+    ```
+    jpeg("../images/Q5_Pie-MoneyMgmtDifficulty.jpg")
+    pie(MoneyMgmtDifficulty.percentageDist, main="Percentage Distribution of money management difficulty rating")
+    dev.off()
+    ```
+    > Output:  
+    > ![If a student has difficulty in managing money: Pie Chart](./images/Q5_Pie-MoneyMgmtDifficulty.jpg)
+  - If the student has ability to prepare his/her own weekly/monthly budget:
+    ```
+    jpeg("../images/Q5_Pie-abilityPrepareBudget.jpg")
+    pie(abilityPrepareBudget.percentageDist, main="Percentage Distribution of budget preparing ability rating")
+    dev.off()
+    ```
+    > Output:  
+    > ![If the student has ability to prepare his/her own weekly/monthly budget: Pie Chart](./images/Q5_Pie-abilityPrepareBudget.jpg)
+  - If the student's parents' are good examples when it comes to money management:
+    ```
+    jpeg("../images/Q5_Pie-parentsGoodExample.jpg")
+    pie(parentsGoodExample.percentageDist, main="Percentage Distribution of if parents are good example rating")
+    dev.off()
+    ```
+    > Output:  
+    > ![If the student's parents' are good examples when it comes to money management: Pie Chart](./images/Q5_Pie-parentsGoodExample.jpg)
+  - If the student appreciate it when parents give advice about what to do with money:
+    ```
+    jpeg("../images/Q5_Pie-appreciateAdvice.jpg")
+    pie(appreciateAdvice.percentageDist, main="Percentage Distribution of parents' advice appreciation rating")
+    dev.off()
+    ```
+    > Output:  
+    > ![If the student appreciate it when parents give advice about what to do with money: Pie Chart](./images/Q5_Pie-appreciateAdvice.jpg)
+  - If friends do regularly save with savings account:
+    ```
+    jpeg("../images/Q5_Pie-friendsSaveRegularly.jpg")
+    pie(friendsSaveRegularly.percentageDist, main="Percentage Distribution of if friends save regularly rating")
+    dev.off()
+    ```
+    > Output:  
+    > ![If friends do regularly save with savings account: Pie Chart](./images/Q5_Pie-friendsSaveRegularly.jpg)
+  - If the student regularly discusses about money management issue (saving) with friends:
+    ```
+    jpeg("../images/Q5_Pie-discussWithFriends.jpg")
+    pie(discussWithFriends.percentageDist, main="Percentage Distribution of if discuss savings with friends rating")
+    dev.off()
+    ```
+    > Output:  
+    > ![If the student regularly discusses about money management issue (saving) with friends: Pie Chart](./images/Q5_Pie-discussWithFriends.jpg)
+  - If "buy now, think later" describes them:
+    ```
+    jpeg("../images/Q5_Pie-buyNowThinkLater.jpg")
+    pie(buyNowThinkLater.percentageDist, main="Percentage Distribution of buy now think later rating")
+    dev.off()
+    ```
+    > Output:  
+    > ![If "buy now, think later" describes them: Pie Chart](./images/Q5_Pie-buyNowThinkLater.jpg)
+  - If rarely achieve saving goals:
+    ```
+    jpeg("../images/Q5_Pie-rarelyAchieveGoal.jpg")
+    pie(rarelyAchieveGoal.percentageDist, main="Percentage Distribution of rarely achieving goal rating")
+    dev.off()
+    ```
+    > Output:  
+    > ![If rarely achieve saving goals: Pie Chart](./images/Q5_Pie-rarelyAchieveGoal.jpg)
+  - If put money aside on a regular basis for the future:
+    ```
+    jpeg("../images/Q5_Pie-putMoneyAside.jpg")
+    pie(putMoneyAside.percentageDist, main="Percentage Distribution of putting money aside rating")
+    dev.off()
+    ```
+    > Output:  
+    > ![If put money aside on a regular basis for the future: Pie Chart](./images/Q5_Pie-putMoneyAside.jpg)
+  - If often compare prices before making a purchase:
+    ```
+    jpeg("../images/Q5_Pie-comparePrices.jpg")
+    pie(comparePrices.percentageDist, main="Percentage Distribution of compare prices before making purchases rating")
+    dev.off()
+    ```
+    > Output:  
+    > ![If often compare prices before making a purchase: Pie Chart](./images/Q5_Pie-comparePrices.jpg)
