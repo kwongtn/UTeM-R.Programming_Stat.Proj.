@@ -1,10 +1,10 @@
 # Q5_2(a) Demographic Profile
 - Gender  
-  | Category | Frequency | Relative Frequency | Percentage Distribution |
-  | --- | --- | --- | --- |
-  | Female | 28 | 0.4666667 | 46.66667 |
-  | Male | 32 | 0.5333333 | 53.33333 |
-  <img src="./images/Q5_Bar-gender.jpg" width=50%><img src="./images/Q5_Pie-gender.jpg" width=50%>
+  | Category | Frequency | Relative Frequency | Percentage Distribution |  
+  | --- | --- | --- | --- |  
+  | Female | 28 | 0.4666667 | 46.66667 |  
+  | Male | 32 | 0.5333333 | 53.33333 |  
+  <img src="./images/Q5_Bar-Gender.jpg" width=50%><img src="./images/Q5_Pie-gender.jpg" width=50%>
 - Age
   | Category | Frequency | Relative Frequency | Percentage Distribution |
   | --- | --- | --- | --- |
