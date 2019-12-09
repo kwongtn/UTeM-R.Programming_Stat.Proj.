@@ -455,23 +455,403 @@ We will therefore be discussing the outputs and rationalle behind the commands u
   ```
   > Output:
   > ```
-  > [1] "The frequency table for Gender is :"
-  >        gender.freq
-  > Female          28
-  > Male            32
-  > ```
-  - Age
-  ```
-  age.freq = table(savingHabit$Age)
-  print("The frequency table for Age is : ")
-  print(cbind(age.freq))
-  ```
-  > Output:
-  > ```
-  > [1] "The frequency table for Age is : "
-  >      age.freq
-  > 19.5       24
-  > 21.5       32
-  > 24          4
+  > 60 rows of data imported.NULL
   > ```
 
+- We then calculate the frequencies of each column:
+  - Gender
+    ```
+    gender.freq = table(savingHabit$Gender)
+    print(cbind(gender.freq))
+    ```
+    > Output:
+    > ```
+    >        gender.freq
+    > Female          28
+    > Male            32
+    > ```
+  - Age
+    ```
+    age.freq = table(savingHabit$Age)
+    print(cbind(age.freq))
+    ```
+    > Output:
+    > ```
+    >      age.freq
+    > 19.5       24
+    > 21.5       32
+    > 24          4
+    > ```
+  - Saving Habit
+    ```
+    faculty.freq = table(savingHabit$Faculty)
+    print(cbind(faculty.freq))
+    ```
+    > Output:
+    > ```
+    >       faculty.freq
+    > FKE              8
+    > FKM              4
+    > FKP              3
+    > FPTT             3
+    > FTKEE            2
+    > FTMK            40
+    > ```
+  - Allowance
+    ```
+    allowance.freq = table(savingHabit$Allowance)
+    print(cbind(allowance.freq))
+    ```
+    > Output:
+    > ```
+    >       allowance.freq
+    > 100               31
+    > 350.5             22
+    > 650.5              7
+    > ```
+  - If student is taking a part time job:
+    ```
+    partTime.freq = table(savingHabit$PartTime)
+    print(cbind(partTime.freq))
+    ```
+    > Output:
+    > ```
+    >     partTime.freq
+    > No             50
+    > Yes            10
+    > ```
+  - If a student has difficulty in managing money:
+    ```
+    MoneyMgmtDifficulty.freq = table(savingHabit$MoneyMgmtDifficulty)
+    print(cbind(MoneyMgmtDifficulty.freq))
+    ```
+    > Output:
+    > ```
+    >   MoneyMgmtDifficulty.freq
+    > 1                        4
+    > 2                        7
+    > 3                       25
+    > 4                       16
+    > 5                        8
+    > ```
+  - If the student has ability to prepare his/her own weekly/monthly budget:
+    ```
+    abilityPrepareBudget.freq = table(savingHabit$AbilityPrepareBudget)
+    print(cbind(abilityPrepareBudget.freq))
+    ```
+    > Output:
+    > ```
+    >   abilityPrepareBudget.freq
+    > 2                        13
+    > 3                        27
+    > 4                        11
+    > 5                         9
+    > ```
+  - If the student's parents' are good examples when it comes to money management:
+    ```
+    parentsGoodExample.freq = table(savingHabit$ParentsGoodExample)
+    print(cbind(parentsGoodExample.freq))
+    ```
+    > Output:
+    > ```
+    >   parentsGoodExample.freq
+    > 2                       3
+    > 3                      21
+    > 4                      21
+    > 5                      15
+    > ```
+  - If the student appreciate it when parents give advice about what to do with money:
+    ```
+    appreciateAdvice.freq = table(savingHabit$AppreciateAdvice)
+    print(cbind(appreciateAdvice.freq))
+    ```
+    > Output:
+    > ```
+    >   appreciateAdvice.freq
+    > 2                     1
+    > 3                    16
+    > 4                    23
+    > 5                    20
+    > ```
+  - If friends do regularly save with savings account:
+    ```
+    friendsSaveRegularly.freq = table(savingHabit$FriendsSaveRegularly)
+    print(cbind(friendsSaveRegularly.freq))
+    ```
+    > Output:
+    > ```
+    >   friendsSaveRegularly.freq
+    > 1                         4
+    > 2                        15
+    > 3                        18
+    > 4                        16
+    > 5                         7
+    > ```
+  - If the student regularly discusses about money management issue (saving) with friends:
+    ```
+    discussWithFriends.freq = table(savingHabit$DiscussWithFriends)
+    print(cbind(discussWithFriends.freq))
+    ```
+    > Output:
+    > ```
+    >   discussWithFriends.freq
+    > 1                       7
+    > 2                      19
+    > 3                      23
+    > 4                       8
+    > 5                       3
+    > ```
+  - If "buy now, think later" describes them:
+    ```
+    buyNowThinkLater.freq = table(savingHabit$BuyNowThinkLater)
+    print(cbind(buyNowThinkLater.freq))
+    ```
+    > Output:
+    > ```
+    >   buyNowThinkLater.freq
+    > 1                    17
+    > 2                    10
+    > 3                    20
+    > 4                     9
+    > 5                     4
+    > ```
+  - If rarely achieve saving goals:
+    ```
+    rarelyAchieveGoal.freq = table(savingHabit$RarelyAchieveGoal)
+    print(cbind(rarelyAchieveGoal.freq))
+    ```
+    > Output:
+    > ```
+    >   rarelyAchieveGoal.freq
+    > 1                      3
+    > 2                     12
+    > 3                     25
+    > 4                     15
+    > 5                      5
+    > ```
+  - If put money aside on a regular basis for the future:
+    ```
+    putMoneyAside.freq = table(savingHabit$PutMoneyAside)
+    print(cbind(putMoneyAside.freq))
+    ```
+    > Output:
+    > ```
+    >   putMoneyAside.freq
+    > 1                  5
+    > 2                  2
+    > 3                 27
+    > 4                 21
+    > 5                  5
+    > ```
+  - If often compare prices before making a purchase:
+    ```
+    comparePrices.freq = table(savingHabit$ComparePrices)
+    print(cbind(comparePrices.freq))
+    ```
+    > Output:
+    > ```
+    >   comparePrices.freq
+    > 2                  5
+    > 3                 14
+    > 4                 21
+    > 5                 20
+    > ```
+
+- We then calculate the relative frequencies of each column:
+  - Gender
+    ```
+    gender.relFreq = table(savingHabit$Gender) / rows
+    print(cbind(gender.relFreq))
+    ```
+    > Output:
+    > ```
+    >        gender.relFreq
+    > Female      0.4666667
+    > Male        0.5333333
+    > ```
+  - Age
+    ```
+    age.relFreq = table(savingHabit$Age) / rows
+    print(cbind(age.relFreq))
+    ```
+    > Output:
+    > ```
+    >      age.relFreq
+    > 19.5  0.40000000
+    > 21.5  0.53333333
+    > 24    0.06666667
+    > ```
+  - Saving Habit
+    ```
+    faculty.relFreq = table(savingHabit$Faculty) / rows
+    print(cbind(faculty.relFreq))
+    ```
+    > Output:
+    > ```
+    >       faculty.relFreq
+    > FKE        0.13333333
+    > FKM        0.06666667
+    > FKP        0.05000000
+    > FPTT       0.05000000
+    > FTKEE      0.03333333
+    > FTMK       0.66666667
+    > ```
+  - Allowance
+    ```
+    allowance.relFreq = table(savingHabit$Allowance) / rows
+    print(cbind(allowance.relFreq))
+    ```
+    > Output:
+    > ```
+    >       allowance.relFreq
+    > 100           0.5166667
+    > 350.5         0.3666667
+    > 650.5         0.1166667
+    > ```
+  - If student is taking a part time job:
+    ```
+    partTime.relFreq = table(savingHabit$PartTime) / rows
+    print(cbind(partTime.relFreq))
+    ```
+    > Output:
+    > ```
+    >     partTime.relFreq
+    > No         0.8333333
+    > Yes        0.1666667
+    > ```
+  - If a student has difficulty in managing money:
+    ```
+    MoneyMgmtDifficulty.relFreq = table(savingHabit$MoneyMgmtDifficulty) / rows
+    print(cbind(MoneyMgmtDifficulty.relFreq))
+    ```
+    > Output:
+    > ```
+    >   MoneyMgmtDifficulty.relFreq
+    > 1                  0.06666667
+    > 2                  0.11666667
+    > 3                  0.41666667
+    > 4                  0.26666667
+    > 5                  0.13333333
+    > ```
+  - If the student has ability to prepare his/her own weekly/monthly budget:
+    ```
+    abilityPrepareBudget.relFreq = table(savingHabit$AbilityPrepareBudget) / rows
+    print(cbind(abilityPrepareBudget.relFreq))
+    ```
+    > Output:
+    > ```
+    >   abilityPrepareBudget.relFreq
+    > 2                    0.2166667
+    > 3                    0.4500000
+    > 4                    0.1833333
+    > 5                    0.1500000
+    > ```
+  - If the student's parents' are good examples when it comes to money management:
+    ```
+    parentsGoodExample.relFreq = table(savingHabit$ParentsGoodExample) / rows
+    print(cbind(parentsGoodExample.relFreq))
+    ```
+    > Output:
+    > ```
+    >   parentsGoodExample.relFreq
+    > 2                       0.05
+    > 3                       0.35
+    > 4                       0.35
+    > 5                       0.25
+    > ```
+  - If the student appreciate it when parents give advice about what to do with money:
+    ```
+    appreciateAdvice.relFreq = table(savingHabit$AppreciateAdvice) / rows
+    print(cbind(appreciateAdvice.relFreq))
+    ```
+    > Output:
+    > ```
+    >   appreciateAdvice.relFreq
+    > 2               0.01666667
+    > 3               0.26666667
+    > 4               0.38333333
+    > 5               0.33333333
+    > ```
+  - If friends do regularly save with savings account:
+    ```
+    friendsSaveRegularly.relFreq = table(savingHabit$FriendsSaveRegularly) / rows
+    print(cbind(friendsSaveRegularly.relFreq))
+    ```
+    > Output:
+    > ```
+    >   friendsSaveRegularly.relFreq
+    > 1                   0.06666667
+    > 2                   0.25000000
+    > 3                   0.30000000
+    > 4                   0.26666667
+    > 5                   0.11666667
+    > ```
+  - If the student regularly discusses about money management issue (saving) with friends:
+    ```
+    discussWithFriends.relFreq = table(savingHabit$DiscussWithFriends) / rows
+    print(cbind(discussWithFriends.relFreq))
+    ```
+    > Output:
+    > ```
+    >   discussWithFriends.relFreq
+    > 1                  0.1166667
+    > 2                  0.3166667
+    > 3                  0.3833333
+    > 4                  0.1333333
+    > 5                  0.0500000
+    > ```
+  - If "buy now, think later" describes them:
+    ```
+    buyNowThinkLater.relFreq = table(savingHabit$BuyNowThinkLater) / rows
+    print(cbind(buyNowThinkLater.relFreq))
+    ```
+    > Output:
+    > ```
+    >   buyNowThinkLater.relFreq
+    > 1               0.28333333
+    > 2               0.16666667
+    > 3               0.33333333
+    > 4               0.15000000
+    > 5               0.06666667
+    > ```
+  - If rarely achieve saving goals:
+    ```
+    rarelyAchieveGoal.relFreq = table(savingHabit$RarelyAchieveGoal) / rows
+    print(cbind(rarelyAchieveGoal.relFreq))
+    ```
+    > Output:
+    > ```
+    >   rarelyAchieveGoal.relFreq
+    > 1                0.05000000
+    > 2                0.20000000
+    > 3                0.41666667
+    > 4                0.25000000
+    > 5                0.08333333
+    > ```
+  - If put money aside on a regular basis for the future:
+    ```
+    putMoneyAside.relFreq = table(savingHabit$PutMoneyAside) / rows
+    print(cbind(putMoneyAside.relFreq))
+    ```
+    > Output:
+    > ```
+    >   putMoneyAside.relFreq
+    > 1            0.08333333
+    > 2            0.03333333
+    > 3            0.45000000
+    > 4            0.35000000
+    > 5            0.08333333
+    > ```
+  - If often compare prices before making a purchase:
+    ```
+    comparePrices.relFreq = table(savingHabit$ComparePrices) / rows
+    print(cbind(comparePrices.relFreq))
+    ```
+    > Output:
+    > ```
+    >   comparePrices.relFreq
+    > 2            0.08333333
+    > 3            0.23333333
+    > 4            0.35000000
+    > 5            0.33333333
+    > ```
