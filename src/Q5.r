@@ -131,48 +131,63 @@ print("")
 
 ## Calculating percentage distribution
 gender.percentageDist = gender.relFreq * 100
+print("The percentage distribution table for gender is: ")
 print(cbind(gender.percentageDist))
 print("")
 age.percentageDist = age.relFreq * 100
+print("The percentage distribution table for age is: ")
 print(cbind(age.percentageDist))
 print("")
 faculty.percentageDist = faculty.relFreq * 100
+print("The percentage distribution table for faculty is: ")
 print(cbind(faculty.percentageDist))
 print("")
 allowance.percentageDist = allowance.relFreq * 100
+print("The percentage distribution table for allowance is: ")
 print(cbind(allowance.percentageDist))
 print("")
 partTime.percentageDist = partTime.relFreq * 100
+print("The percentage distribution table for partTime is: ")
 print(cbind(partTime.percentageDist))
 print("")
 MoneyMgmtDifficulty.percentageDist = MoneyMgmtDifficulty.relFreq * 100
+print("The percentage distribution table for MoneyMgmtDifficulty is: ")
 print(cbind(MoneyMgmtDifficulty.percentageDist))
 print("")
 abilityPrepareBudget.percentageDist = abilityPrepareBudget.relFreq * 100
+print("The percentage distribution table for abilityPrepareBudget is: ")
 print(cbind(abilityPrepareBudget.percentageDist))
 print("")
 parentsGoodExample.percentageDist = parentsGoodExample.relFreq * 100
+print("The percentage distribution table for parentsGoodExample is: ")
 print(cbind(parentsGoodExample.percentageDist))
 print("")
 appreciateAdvice.percentageDist = appreciateAdvice.relFreq * 100
+print("The percentage distribution table for appreciateAdvice is: ")
 print(cbind(appreciateAdvice.percentageDist))
 print("")
 friendsSaveRegularly.percentageDist = friendsSaveRegularly.relFreq * 100
+print("The percentage distribution table for friendsSaveRegularly is: ")
 print(cbind(friendsSaveRegularly.percentageDist))
 print("")
 discussWithFriends.percentageDist = discussWithFriends.relFreq * 100
+print("The percentage distribution table for discussWithFriends is: ")
 print(cbind(discussWithFriends.percentageDist))
 print("")
 buyNowThinkLater.percentageDist = buyNowThinkLater.relFreq * 100
+print("The percentage distribution table for buyNowThinkLater is: ")
 print(cbind(buyNowThinkLater.percentageDist))
 print("")
 rarelyAchieveGoal.percentageDist = rarelyAchieveGoal.relFreq * 100
+print("The percentage distribution table for rarelyAchieveGoal is: ")
 print(cbind(rarelyAchieveGoal.percentageDist))
 print("")
 putMoneyAside.percentageDist = putMoneyAside.relFreq * 100
+print("The percentage distribution table for putMoneyAside is: ")
 print(cbind(putMoneyAside.percentageDist))
 print("")
 comparePrices.percentageDist = comparePrices.relFreq * 100
+print("The percentage distribution table for comparePrices is: ")
 print(cbind(comparePrices.percentageDist))
 print("")
 
@@ -271,4 +286,22 @@ pie(comparePrices.percentageDist, main="Percentage Distribution of compare price
 dev.off()
 # </Q5_2(a)>
 
-# <Q5_2(a)>
+# <Q5_2(b)>
+
+# </Q5_2(b)>
+
+# <Q5_2(c)>
+
+# </Q5_2(c)>
+
+# <Q5_2(d)>
+
+# </Q5_2(d)>
+
+# <Q5_2(e)>
+
+# </Q5_2(e)>
+
+# <Q5_2(f)>
+
+# </Q5_2(f)>
