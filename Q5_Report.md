@@ -152,9 +152,9 @@
   | 3 | 27 | 0.45000000 | 45.000000 |
   | 4 | 21 | 0.35000000 | 35.000000 |
   | 5 | 5 | 0.08333333 | 8.333333 |
-  
+
   <img src="./images/Q5_Bar-putMoneyAside.jpg" width=50%><img src="./images/Q5_Pie-putMoneyAside.jpg" width=50%>
-  
+
 - If often compare prices before making a purchase:
 
   | Category | Frequency | Relative Frequency | Percentage Distribution |
@@ -163,9 +163,9 @@
   | 3 | 14 | 0.23333333 | 23.333333 |
   | 4 | 21 | 0.35000000 | 35.000000 |
   | 5 | 20 | 0.33333333 | 33.333333 |
-  
+
   <img src="./images/Q5_Bar-comparePrices.jpg" width=50%><img src="./images/Q5_Pie-comparePrices.jpg" width=50%>
-  
+
 
 # Q5_2(b) Means comparison
 
