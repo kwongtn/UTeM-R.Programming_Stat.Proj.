@@ -253,8 +253,10 @@ Where each `A` and `B` refer to their own criteria.
     > [1] 0.1866667
     > ```
   
-  - The probability that the phone is branded `'Samsung'` and `'Apple'`
-    ` Probably is an error in question `
+  - The probability that the phone is branded `'Samsung'` and `'Apple'`  
+    ```
+    It is impossible to find a phone that is both branded "Samsung" and "Apple", therefore the probability is 0.
+    ```
 
   - The probability that a phone is branded `'Xiaomi'` or have `good` condition
     ```
