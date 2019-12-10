@@ -447,6 +447,7 @@ This question presents problems for data analysis on the Saving Habits of studen
 We will therefore be discussing the outputs and rationalle behind the commands used in the script.
 
 ### The following codes were used (output line breaks are omitted):
+#### For Q5_2(a)
 - We first import the dataset and view it:
   ```
   savingHabit <- read.delim("./data/Q5_SavingHabit_cleaned.txt")
@@ -1298,3 +1299,18 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     ```
     > Output:  
     > ![If often compare prices before making a purchase: Pie Chart](./images/Q5_Pie-comparePrices.jpg)
+
+#### For Q5_2(b)
+- 
+
+#### For Q5_2(c)
+- 
+
+#### For Q5_2(b)
+- 
+
+#### For Q5_2(e)
+- 
+
+#### For Q5_2(f)
+- 
