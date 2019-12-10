@@ -83,8 +83,28 @@ States_df <- data.frame(year_char,melaka_visitor, wp_visitor, perak_visitor)
   ```
   cat("Result:\n\n Mean Melaka:",mean_melaka,"\n Mean WP:",mean_wp,"\n Mean Perak:",mean_perak,"\n \n Median Melaka:",median_melaka,"\n Median WP:",median_wp,"\n Median Perak:",median_perak,"\n \n Mode Melaka:", mode_melaka,"\n Mode WP:", mode_wp,"\n Mode Perak:", mode_perak,"\n\n Variance Melaka:", var_melaka, "\n Variance WP:", var_wp, "\n Variance Perak:",var_perak,"\n\n SD Melaka:",sd_melaka,"\n SD WP:",sd_wp,"\n SD Perak:",sd_perak)
   ```
-  Output:
-  >
+  > Output:
+  > ```
+  > Mean Melaka: 93756.12 
+  > Mean WP: 123094.8 
+  > Mean Perak: 176081.4 
+  > 
+  > Median Melaka: 96719 
+  > Median WP: 122446.5 
+  > Median Perak: 161672.5 
+  > 
+  > Mode Melaka: 163386 
+  > Mode WP: 173210 
+  > Mode Perak: 425000 
+  > 
+  > Variance Melaka: 875363366 
+  > Variance WP: 338842768 
+  > Variance Perak: 2710490245 
+  > 
+  > SD Melaka: 29586.54 
+  > SD WP: 18407.68 
+  > SD Perak: 52062.37
+  > ```
 
 - The barplots are then drawn:
   - Barplots of Melaka States Visitor
