@@ -1,4 +1,4 @@
-# Report
+# Coding Report
 
 ## Question 1
 This question requires us to calculate the sample means, medians, modes, variances and standard deviations from the `UTC visitor's statistic year 2013-17` dataset. 
@@ -459,6 +459,84 @@ Where :
 
 ---
 ## Question 4
+This question presents problem for data analysis on the `Lunch money per week` of students.  
+[This dataset](./src/data/Q4_data.txt) was used.
+### The following codes were used (output line breaks are omitted):
+- We first import the data:
+  ```
+  LunchMoneyPerWeek <- read.csv("./data/Q4_data.txt", sep="")
+  View(LunchMoneyPerWeek)
+  rows = nrow(LunchMoneyPerWeek)
+  print(cat(rows, "rows of data imported."))
+  ```
+  > Output:
+  > ```
+  > 60 rows of data imported.NULL
+  > ```
+
+- We then calculate the mean and standard deviation:
+  ```
+  print("Mean = ")
+  mean(myLMPW)
+  print("Standard Deviation = ")
+  sd(myLMPW)
+  ```
+  > Output:
+  > ```
+  > [1] "Mean = "
+  > [1] 57.45
+  > [1] "Standard Deviation = "
+  > [1] 61.65498
+  > ```
+
+- Then, we output the frequency table and histogram:
+  ```
+  print("Frequency Table & Histogram")
+  x = table(myLMPW)
+  print(cbind(x))
+  jpeg("../images/Q4_Histogram.jpg")
+  barplot(x, main="Lunch Money per Week")
+  ```
+  > Output:
+  > ```
+  > [1] "Frequency Table & Histogram"
+  >      x
+  > 3    1
+  > 4    1
+  > 5    3
+  > 15   3
+  > 20   2
+  > 25   7
+  > 26   1
+  > 28   1
+  > 30   3
+  > 35   3
+  > 37   1
+  > 40   1
+  > 43   1
+  > 50  10
+  > 60   3
+  > 70   5
+  > 80   3
+  > 91   1
+  > 100  7
+  > 105  1
+  > 180  1
+  > 450  1
+  > ```
+  > ![Q4 Histogram](./images/Q4_Histogram.jpg)
+
+- The highest 20% of lunch money amount was then calculated:
+```
+```
+
+- The lunch money amount that a person has 30% chance of spending more was calculated:
+```
+```
+
+- We then calculate the probability of spending for lunch within RM 5 from the mean:
+```
+```
 
 
 ---
