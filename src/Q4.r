@@ -21,14 +21,14 @@ barplot(x, main="Lunch Money per Week")
 
 print("4)b)the highest 20% of lunch money amount = ")
 print("the lunch money amount of 12th students")
-a = c(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 91, 80)
-a
+th = LunchMoneyPerWeek$LunchMoneyPerWeek.RM.
+quantile(th, c(0.80))
 print("ANSWER = 80")
 
-print("4)c)the lunch money amount that 30% chance of spending more for lunches in a week =  ")
+print("4)c)the lunch money amount that 30% chance of spending more for lunchies in a week =  ")
 print("the lunch money amount of 18th student")
-b = c(100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 91, 80, 80, 80, 70, 70, 70, 70)
-b
+print("Answer : ")
+quantile(th, c(0.70))
 print("ANSWER = 70")
 
 #Q4(d)
