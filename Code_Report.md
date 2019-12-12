@@ -527,16 +527,58 @@ This question presents problem for data analysis on the `Lunch money per week` o
   > ![Q4 Histogram](./images/Q4_Histogram.jpg)
 
 - The highest 20% of lunch money amount was then calculated:
-```
-```
+  ```
+  print("4)b)the highest 20% of lunch money amount = ")
+  print("the lunch money amount of 12th students = RM ")
+  th = LunchMoneyPerWeek$lunchMoney
+  b = quantile(th, c(0.80))
+  print(b[["80%"]])
+  ```
+  > Output:
+  > ```
+  > [1] "4)b)the highest 20% of lunch money amount = "
+  > [1] "the lunch money amount of 12th students = RM "
+  > [1] 80
+  > ```
 
 - The lunch money amount that a person has 30% chance of spending more was calculated:
-```
-```
+  ```
+  print("4)c)the lunch money amount that 30% chance of spending   more for lunchies in a week =  ")
+  print("the lunch money amount of 18th student")
+  print("Answer : RM")
+  print(quantile(th, c(0.70))[["70%"]])
+  ```
+  > Output:
+  > ```
+  > [1] "4)c)the lunch money amount that 30% chance of spending   > more for lunchies in a week =  "
+  >  lunchies in a week =  "
+  > [1] "the lunch money amount of 18th student"
+  > [1] "Answer : RM"
+  > [1] 70
+  > ```
 
 - We then calculate the probability of spending for lunch within RM 5 from the mean:
-```
-```
+  ```
+  print("Normal Distribution")
+  print("P(45.2 < x < 55.2) = ")
+  print("1 - 2 X P(x < 45.2)")
+  print("P(x < 45.2) = ")
+  y = c(pnorm(45.2, mean = 50.2, sd = 30.58237, lower.tail =   TRUE))
+  y
+  z = 1-2*y
+  print("ANSWER = ")
+  z
+  ```
+  > Output:
+  > ```
+  > [1] "Normal Distribution"
+  > [1] "P(45.2 < x < 55.2) = "
+  > [1] "1 - 2 X P(x < 45.2)"
+  > [1] "P(x < 45.2) = "
+  > [1] 0.4350652
+  > [1] "ANSWER = "
+  > [1] 0.1298696
+  > ```
 
 
 ---

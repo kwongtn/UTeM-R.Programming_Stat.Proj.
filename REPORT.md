@@ -21,6 +21,10 @@
 ### Combined graph
 ![Combined line chart of visitors of each state](./images/Q1_CombinedBar.png)
 
+## Conclusion
+> What can you conclude regarding difference of number of visitors between those states? You can use other information of the states to elaborate your conclusion.
+
+
 # Question 2
 ## Data Summary
 - Brand Summary
@@ -54,6 +58,7 @@ From the data, we can conclude that:
 
 # Question 3
 ## Data Summary
+
 | Grades | Frequency |
 | --- | --- |
 | A | 20 |
@@ -71,7 +76,43 @@ From the data, we can conclude that:
 - The probability for `1 of 9` subjects getting `D` is `0.3311508`
 
 # Question 4
+## Data Summary
+- The mean of the data is `57.45`, while the standard deviation is `61.65498`.
+- The frequency table is as follows:
 
+  | Lunch Money (RM) | Frequency |
+  | --- | --- |
+  | 3  | 1 |
+  | 4  | 1 |
+  | 5  | 3 |
+  | 15 | 3 |
+  | 20 | 2 |
+  | 25 | 7 |
+  | 26 | 1 |
+  | 28 | 1 |
+  | 30 | 3 |
+  | 35 | 3 |
+  | 37 | 1 |
+  | 40 | 1 |
+  | 43 | 1 |
+  | 50 | 10 |
+  | 60 | 3 |
+  | 70 | 5 |
+  | 80 | 3 |
+  | 91 | 1 |
+  | 100 | 7 |
+  | 105 | 1 |
+  | 180 | 1 |
+  | 450 | 1 |
+
+- The histogram of the data is as follows:
+  ![Q4_Histogram](./images/Q4_Histogram.jpg)
+
+## Results
+From the data, we can deduce that:
+- The `highest 20 %` lunch money amount is `RM 80.00` .
+- There is a `30 %` chance of spending more than `RM 70.00` for lunches in a week.
+- The probability of spending for lunch `within RM 5 from the mean` is `0.1298696`
 
 # Question 5
 Refer to [here](./Q5_Report.md) for the report.
