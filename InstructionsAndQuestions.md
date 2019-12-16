@@ -72,7 +72,7 @@ Collect data for the amount of lunch money spent per week from at least 60 stude
 1.	Do the analysis of the survey which includes:  
     
     a) Demographic profile:  
-    There are 6 items in demographic profile. Provide frequency, relative frequency, percentage  distribution table and as well as appropriate graphs for each item. Give some explanation  about each item.  
+    There are 6 items in demographic profile. Provide frequency, relative frequency, percentage distribution table and as well as appropriate graphs for each item. Give some explanation about each item.  
 
     b) Assume the data obtained are normally distributed.  
     Compare the means of every variable (financial awareness, parents influence, peer influence and self-control) between gender and engaging with part time by performing hypothesis testing between 2 means with the assumption of population standard deviations are unknown. 
