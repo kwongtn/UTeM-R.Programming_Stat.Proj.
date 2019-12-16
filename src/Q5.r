@@ -403,12 +403,23 @@ scatter.smooth(x=savingHabit$DiscussWithFriends, y = savingHabit$PutMoneyAside, 
 scatter.smooth(x=savingHabit$BuyNowThinkLater, y = savingHabit$PutMoneyAside, xlab="Buy Now Think Later", ylab="Saving Habits", main="Financial Awareness")
 
 
-# Finding the Linear Coefficient between each Attributes
+# Finding the Linear correlation coefficient between each Attributes
 coeFinancial <- cor(savingHabit$MoneyMgmtDifficulty, savingHabit$PutMoneyAside)
 coeParents <- cor(savingHabit$ParentsGoodExample, savingHabit$PutMoneyAside)
 coePeer <- cor(savingHabit$DiscussWithFriends, savingHabit$PutMoneyAside)
 coeSelfControl <- cor(savingHabit$BuyNowThinkLater, savingHabit$PutMoneyAside)
-cat(" The linear coefficient of financial is: ", coeFinancial, "\n", "The linear coefficient of Parents is: ", coeParents, " \n The linear coefficient of Peer is: ", coePeer, "\n The linear coefficient of Self-Control is: ", coeSelfControl)
+cat(" The correlation coefficient of financial is: ", coeFinancial, "\n", "The correlation coefficient of Parents is: ", coeParents, " \n The correlation coefficient of Peer is: ", coePeer, "\n The correlation coefficient of Self-Control is: ", coeSelfControl)
+
+financialLinearModel <- lm(savingHabit$MoneyMgmtDifficulty ~ savingHabit$PutMoneyAside, data = savingHabit)
+parentsLinearModel <- lm(savingHabit$ParentsGoodExample ~ savingHabit$PutMoneyAside, data = savingHabit)
+peerLinearModel <- lm(savingHabit$DiscussWithFriends ~ savingHabit$PutMoneyAside, data = savingHabit)
+selfcontrolLinearModel <- lm(savingHabit$BuyNowThinkLater ~ savingHabit$PutMoneyAside, data = savingHabit)
+
+summary(financialLinearModel)
+summary(parentsLinearModel)
+summary(peerLinearModel)
+summary(selfcontrolLinearModel)
+
 
 # </Q5_2(d)>
 
