@@ -284,7 +284,99 @@ dev.off()
 jpeg("../images/Q5_Pie-comparePrices.jpg")
 pie(comparePrices.percentageDist, main="Percentage Distribution of compare prices before making purchases rating")
 dev.off()
+
 # </Q5_2(a)>
+
+library(ggplot2)
+library(dplyr)
+
+# HYPOTHESIS TEST WITH ALL GENDER AND ATTRIBUTES
+# Financial Influences
+qplot(x = savingHabit$Gender, y = savingHabit$MoneyMgmtDifficulty,
+      geom = "boxplot", data = savingHabit,
+      xlab = "Gender", 
+      ylab = "Money Management Difficulty",
+      fill = I("lightblue"))
+
+# Parents Influences
+qplot(x = savingHabit$Gender, y = savingHabit$ParentsGoodExample,
+      geom = "boxplot", data = savingHabit,
+      xlab = "Gender", 
+      ylab = "Parents Good Example",
+      fill = I("lightblue"))
+
+# Peer Influences
+qplot(x = savingHabit$Gender, y = savingHabit$DiscussWithFriends,
+      geom = "boxplot", data = savingHabit,
+      xlab = "Gender", 
+      ylab = "Discuss With Friends",
+      fill = I("lightblue"))
+
+# Self-Control Influences
+qplot(x = savingHabit$Gender, y = savingHabit$BuyNowThinkLater,
+      geom = "boxplot", data = savingHabit,
+      xlab = "Gender", 
+      ylab = "Buy Now Think Later",
+      fill = I("lightblue"))
+
+# Saving Influences
+qplot(x = savingHabit$Gender, y = savingHabit$PutMoneyAside,
+      geom = "boxplot", data = savingHabit,
+      xlab = "Gender", 
+      ylab = "Put Money Aside",
+      fill = I("lightblue"))
+
+genderFinancial <- t.test(savingHabit$MoneyMgmtDifficulty ~ savingHabit$Gender, data = savingHabit)
+genderParents <- t.test(savingHabit$ParentsGoodExample ~ savingHabit$Gender, data = savingHabit)
+genderPeer <- t.test(savingHabit$DiscussWithFriends ~ savingHabit$Gender, data = savingHabit)
+genderSelfControl <- t.test(savingHabit$BuyNowThinkLater ~ savingHabit$Gender, data = savingHabit)
+genderSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$Gender, data = savingHabit)
+
+
+
+# REFERENCES
+
+# HYPOTHESIS TEST WITH ALL PART TIME AND ATTRIBUTES
+# Financial Influences
+qplot(x = savingHabit$PartTime, y = savingHabit$MoneyMgmtDifficulty,
+      geom = "boxplot", data = savingHabit,
+      xlab = "Part Time", 
+      ylab = "Money Management Difficulty",
+      fill = I("lightblue"))
+
+# Parents Influences
+qplot(x = savingHabit$PartTime, y = savingHabit$ParentsGoodExample,
+      geom = "boxplot", data = savingHabit,
+      xlab = "Gender", 
+      ylab = "Parents Good Example",
+      fill = I("lightblue"))
+
+# Peer Influences
+qplot(x = savingHabit$PartTime, y = savingHabit$DiscussWithFriends,
+      geom = "boxplot", data = savingHabit,
+      xlab = "Gender", 
+      ylab = "Discuss With Friends",
+      fill = I("lightblue"))
+
+# Self-Control Influences
+qplot(x = savingHabit$PartTime, y = savingHabit$BuyNowThinkLater,
+      geom = "boxplot", data = savingHabit,
+      xlab = "Gender", 
+      ylab = "Buy Now Think Later",
+      fill = I("lightblue"))
+
+# Saving Influences
+qplot(x = savingHabit$PartTime, y = savingHabit$PutMoneyAside,
+      geom = "boxplot", data = savingHabit,
+      xlab = "Gender", 
+      ylab = "Put Money Aside",
+      fill = I("lightblue"))
+
+PTFinancial <- t.test(savingHabit$MoneyMgmtDifficulty ~ savingHabit$PartTime, data = savingHabit)
+PTParents <- t.test(savingHabit$ParentsGoodExample ~ savingHabit$PartTime, data = savingHabit)
+PTPeer <- t.test(savingHabit$DiscussWithFriends ~ savingHabit$PartTime, data = savingHabit)
+PTSelfControl <- t.test(savingHabit$BuyNowThinkLater ~ savingHabit$PartTime, data = savingHabit)
+PTSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$PartTime, data = savingHabit)
 
 # <Q5_2(b)>
 
