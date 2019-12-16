@@ -365,7 +365,7 @@ qplot(x = savingHabit$PartTime, y = savingHabit$BuyNowThinkLater,
       ylab = "Buy Now Think Later",
       fill = I("lightblue"))
 
-# Saving Influences
+# Saving Attitude
 qplot(x = savingHabit$PartTime, y = savingHabit$PutMoneyAside,
       geom = "boxplot", data = savingHabit,
       xlab = "Gender", 
@@ -387,6 +387,28 @@ PTSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$PartTime, data = savi
 # </Q5_2(c)>
 
 # <Q5_2(d)>
+
+# Simple Linear Regression (Saving Attitude [For now I use only put money aside] as the attributes is dependent variables)
+
+# Financial Awareness Scatter Plot
+scatter.smooth(x=savingHabit$MoneyMgmtDifficulty, y = savingHabit$PutMoneyAside, xlab="Money Management", ylab="Saving Habits", main="Financial Awareness")
+
+# Parents influence Scatter Plot
+scatter.smooth(x=savingHabit$ParentsGoodExample, y = savingHabit$PutMoneyAside, xlab="Parents Good Example", ylab="Saving Habits", main="Financial Awareness")
+
+# Peer influence Scatter Plot
+scatter.smooth(x=savingHabit$DiscussWithFriends, y = savingHabit$PutMoneyAside, xlab="Discuss With Friends", ylab="Saving Habits", main="Financial Awareness")
+
+# Self-Control influence Scatter Plot
+scatter.smooth(x=savingHabit$BuyNowThinkLater, y = savingHabit$PutMoneyAside, xlab="Buy Now Think Later", ylab="Saving Habits", main="Financial Awareness")
+
+
+# Finding the Linear Coefficient between each Attributes
+coeFinancial <- cor(savingHabit$MoneyMgmtDifficulty, savingHabit$PutMoneyAside)
+coeParents <- cor(savingHabit$ParentsGoodExample, savingHabit$PutMoneyAside)
+coePeer <- cor(savingHabit$DiscussWithFriends, savingHabit$PutMoneyAside)
+coeSelfControl <- cor(savingHabit$BuyNowThinkLater, savingHabit$PutMoneyAside)
+cat(" The linear coefficient of financial is: ", coeFinancial, "\n", "The linear coefficient of Parents is: ", coeParents, " \n The linear coefficient of Peer is: ", coePeer, "\n The linear coefficient of Self-Control is: ", coeSelfControl)
 
 # </Q5_2(d)>
 
