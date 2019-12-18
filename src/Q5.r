@@ -425,11 +425,14 @@ PTSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$PartTime, data = savi
   
   
   ## Finding the Linear correlation coefficient between each Attributes
-  coeFinancial <- cor(savingHabit$MoneyMgmtDifficulty, savingHabit$PutMoneyAside)
-  coeParents <- cor(savingHabit$ParentsGoodExample, savingHabit$PutMoneyAside)
-  coePeer <- cor(savingHabit$DiscussWithFriends, savingHabit$PutMoneyAside)
-  coeSelfControl <- cor(savingHabit$BuyNowThinkLater, savingHabit$PutMoneyAside)
-  cat(" The correlation coefficient of financial is: ", coeFinancial, "\n", "The correlation coefficient of Parents is: ", coeParents, " \n The correlation coefficient of Peer is: ", coePeer, "\n The correlation coefficient of Self-Control is: ", coeSelfControl)
+  print("The correlation coefficient of financial is:")
+  print(cor(savingHabit$MoneyMgmtDifficulty, savingHabit$PutMoneyAside))
+  print("The correlation coefficient of parents is:")
+  print(cor(savingHabit$ParentsGoodExample, savingHabit$PutMoneyAside))
+  print("The correlation coefficient of peers is:")
+  print(cor(savingHabit$DiscussWithFriends, savingHabit$PutMoneyAside))
+  print("The correlation coefficient of self-control is:")
+  print(cor(savingHabit$BuyNowThinkLater, savingHabit$PutMoneyAside))
   
   financialLinearModel <- lm(savingHabit$MoneyMgmtDifficulty ~ savingHabit$PutMoneyAside, data = savingHabit)
   parentsLinearModel <- lm(savingHabit$ParentsGoodExample ~ savingHabit$PutMoneyAside, data = savingHabit)
