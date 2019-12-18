@@ -443,5 +443,10 @@ cat(" The correlation coefficient of financial is: ", coeFinancial, "\n", "The c
 
  
 # <Q5_2(f)>
+meansOfEveryvariable = (financialInfluences + parentsInfluences + peerInfluences + selfcontrolInfluences)/4
 
+anovaAge <- aov(meansOfEveryvariable ~ savingHabit$Age, data = savingHabit)
+anovaFaculty <- aov(meansOfEveryvariable ~ savingHabit$Faculty, data = savingHabit)
+anovaFinancial <- aov(meansOfEveryvariable ~ savingHabit$FinancialMethods, data = savingHabit)
+anovaAllowance <- aov(meansOfEveryvariable ~ savingHabit$Allowance, data = savingHabit)
 # </Q5_2(f)>
