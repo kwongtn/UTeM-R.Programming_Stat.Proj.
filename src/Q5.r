@@ -383,8 +383,6 @@
           fill = I("lightblue"))
     dev.off()
 
-
-
 # </Q5_2(b)>
 
 # <Q5_2(c)>
@@ -406,16 +404,24 @@ PTSelfControl <- t.test(savingHabit$BuyNowThinkLater ~ savingHabit$PartTime, dat
 PTSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$PartTime, data = savingHabit)
   
   ## Financial Awareness Scatter Plot
+  jpeg("../images/Q5_Scatter-PutMoneyAside_MoneyMgmtDifficulty.jpg")
   scatter.smooth(x=savingHabit$MoneyMgmtDifficulty, y = savingHabit$PutMoneyAside, xlab="Money Management", ylab="Saving Habits", main="Financial Awareness")
+  dev.off()
   
   ## Parents influence Scatter Plot
+  jpeg("../images/Q5_Scatter-PutMoneyAside_ParentsGoodExample.jpg")
   scatter.smooth(x=savingHabit$ParentsGoodExample, y = savingHabit$PutMoneyAside, xlab="Parents Good Example", ylab="Saving Habits", main="Financial Awareness")
+  dev.off()
   
   ## Peer influence Scatter Plot
+  jpeg("../images/Q5_Scatter-PutMoneyAside_DiscussWithFriends.jpg")
   scatter.smooth(x=savingHabit$DiscussWithFriends, y = savingHabit$PutMoneyAside, xlab="Discuss With Friends", ylab="Saving Habits", main="Financial Awareness")
+  dev.off()
   
   ## Self-Control influence Scatter Plot
+  jpeg("../images/Q5_Scatter-PutMoneyAside_BuyNowThinkLater.jpg")
   scatter.smooth(x=savingHabit$BuyNowThinkLater, y = savingHabit$PutMoneyAside, xlab="Buy Now Think Later", ylab="Saving Habits", main="Financial Awareness")
+  dev.off()
   
   
   ## Finding the Linear correlation coefficient between each Attributes
