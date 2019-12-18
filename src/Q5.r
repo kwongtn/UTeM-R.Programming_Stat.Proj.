@@ -337,53 +337,52 @@
           fill = I("lightblue"))
     dev.off()
 
-genderFinancial <- t.test(savingHabit$MoneyMgmtDifficulty ~ savingHabit$Gender, data = savingHabit)
-genderParents <- t.test(savingHabit$ParentsGoodExample ~ savingHabit$Gender, data = savingHabit)
-genderPeer <- t.test(savingHabit$DiscussWithFriends ~ savingHabit$Gender, data = savingHabit)
-genderSelfControl <- t.test(savingHabit$BuyNowThinkLater ~ savingHabit$Gender, data = savingHabit)
-genderSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$Gender, data = savingHabit)
-
   ## HYPOTHESIS TEST WITH ALL PART TIME AND ATTRIBUTES
     ### Financial Influences
+    jpeg("../images/Q5_Plot-PartTime_MoneyMgmtDifficulty.jpg")
     qplot(x = savingHabit$PartTime, y = savingHabit$MoneyMgmtDifficulty,
           geom = "boxplot", data = savingHabit,
           xlab = "Part Time", 
           ylab = "Money Management Difficulty",
           fill = I("lightblue"))
+    dev.off()
     
     ### Parents Influences
+    jpeg("../images/Q5_Plot-PartTime_ParentsGoodExample.jpg")
     qplot(x = savingHabit$PartTime, y = savingHabit$ParentsGoodExample,
           geom = "boxplot", data = savingHabit,
           xlab = "Gender", 
           ylab = "Parents Good Example",
           fill = I("lightblue"))
+    dev.off()
     
     ### Peer Influences
+    jpeg("../images/Q5_Plot-PartTime_DiscussWithFriends.jpg")
     qplot(x = savingHabit$PartTime, y = savingHabit$DiscussWithFriends,
           geom = "boxplot", data = savingHabit,
           xlab = "Gender", 
           ylab = "Discuss With Friends",
           fill = I("lightblue"))
+    dev.off()
     
     ### Self-Control Influences
+    jpeg("../images/Q5_Plot-PartTime_BuyNowThinkLater.jpg")
     qplot(x = savingHabit$PartTime, y = savingHabit$BuyNowThinkLater,
           geom = "boxplot", data = savingHabit,
           xlab = "Gender", 
           ylab = "Buy Now Think Later",
           fill = I("lightblue"))
+    dev.off()
     
     ### Saving Attitude
+    jpeg("../images/Q5_Plot-PartTime_PutMoneyAside.jpg")
     qplot(x = savingHabit$PartTime, y = savingHabit$PutMoneyAside,
           geom = "boxplot", data = savingHabit,
           xlab = "Gender", 
           ylab = "Put Money Aside",
           fill = I("lightblue"))
+    dev.off()
 
-PTFinancial <- t.test(savingHabit$MoneyMgmtDifficulty ~ savingHabit$PartTime, data = savingHabit)
-PTParents <- t.test(savingHabit$ParentsGoodExample ~ savingHabit$PartTime, data = savingHabit)
-PTPeer <- t.test(savingHabit$DiscussWithFriends ~ savingHabit$PartTime, data = savingHabit)
-PTSelfControl <- t.test(savingHabit$BuyNowThinkLater ~ savingHabit$PartTime, data = savingHabit)
-PTSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$PartTime, data = savingHabit)
 
 
 # </Q5_2(b)>
@@ -394,6 +393,17 @@ PTSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$PartTime, data = savi
 
 # <Q5_2(d)>
   ## Simple Linear Regression (Saving Attitude [For now I use only put money aside] as the attributes is dependent variables)
+
+genderFinancial <- t.test(savingHabit$MoneyMgmtDifficulty ~ savingHabit$Gender, data = savingHabit)
+genderParents <- t.test(savingHabit$ParentsGoodExample ~ savingHabit$Gender, data = savingHabit)
+genderPeer <- t.test(savingHabit$DiscussWithFriends ~ savingHabit$Gender, data = savingHabit)
+genderSelfControl <- t.test(savingHabit$BuyNowThinkLater ~ savingHabit$Gender, data = savingHabit)
+genderSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$Gender, data = savingHabit)
+PTFinancial <- t.test(savingHabit$MoneyMgmtDifficulty ~ savingHabit$PartTime, data = savingHabit)
+PTParents <- t.test(savingHabit$ParentsGoodExample ~ savingHabit$PartTime, data = savingHabit)
+PTPeer <- t.test(savingHabit$DiscussWithFriends ~ savingHabit$PartTime, data = savingHabit)
+PTSelfControl <- t.test(savingHabit$BuyNowThinkLater ~ savingHabit$PartTime, data = savingHabit)
+PTSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$PartTime, data = savingHabit)
   
   ## Financial Awareness Scatter Plot
   scatter.smooth(x=savingHabit$MoneyMgmtDifficulty, y = savingHabit$PutMoneyAside, xlab="Money Management", ylab="Saving Habits", main="Financial Awareness")
