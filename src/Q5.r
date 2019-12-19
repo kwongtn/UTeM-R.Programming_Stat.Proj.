@@ -287,6 +287,8 @@
 
 # </Q5_2(a)>
 
+
+
 # </Q5_2(b)>
 library(ggplot2)
 library(dplyr)
@@ -299,41 +301,50 @@ parentsInfluences = (savingHabit$ParentsGoodExample + savingHabit$AppreciateAdvi
 peerInfluences = (savingHabit$FriendsSaveRegularly + savingHabit$DiscussWithFriends)/2
 selfcontrolInfluences = (savingHabit$BuyNowThinkLater + savingHabit$RarelyAchieveGoal)/2
 savingAttitude = (savingHabit$PutMoneyAside + savingHabit$ComparePrices)/2
-
-# Financial Influences
-qplot(x = savingHabit$Gender, y = financialInfluences,
-      geom = "boxplot", data = savingHabit,
-      xlab = "Gender", 
-      ylab = "Financial Influences",
-      fill = I("lightblue"))
-
-# Parents Influences
-qplot(x = savingHabit$Gender, y = parentsInfluences,
-      geom = "boxplot", data = savingHabit,
-      xlab = "Gender", 
-      ylab = "Parents Good Example",
-      fill = I("lightblue"))
-
-# Peer Influences
-qplot(x = savingHabit$Gender, y = peerInfluences,
-      geom = "boxplot", data = savingHabit,
-      xlab = "Gender", 
-      ylab = "Discuss With Friends",
-      fill = I("lightblue"))
-
-# Self-Control Influences
-qplot(x = savingHabit$Gender, y = selfcontrolInfluences,
-      geom = "boxplot", data = savingHabit,
-      xlab = "Gender", 
-      ylab = "Buy Now Think Later",
-      fill = I("lightblue"))
-
-# Saving Influences
-qplot(x = savingHabit$Gender, y = savingAttitude,
-      geom = "boxplot", data = savingHabit,
-      xlab = "Gender", 
-      ylab = "Put Money Aside",
-      fill = I("lightblue"))
+    ### Financial Influences
+    jpeg("../images/Q5_Plot-Gender_MoneyMgmtDifficulty.jpg")
+    qplot(x = savingHabit$Gender, y = savingHabit$MoneyMgmtDifficulty,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Gender", 
+        ylab = "Money Management Difficulty",
+        fill = I("lightblue"))
+    dev.off()
+    
+    ### Parents Influences
+    jpeg("../images/Q5_Plot-Gender_ParentsGoodExample.jpg")
+    qplot(x = savingHabit$Gender, y = savingHabit$ParentsGoodExample,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Gender", 
+        ylab = "Parents Good Example",
+        fill = I("lightblue"))
+    dev.off()
+    
+    ### Peer Influences
+    jpeg("../images/Q5_Plot-Gender_DiscussWithFriends.jpg")
+    qplot(x = savingHabit$Gender, y = savingHabit$DiscussWithFriends,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Gender", 
+        ylab = "Discuss With Friends",
+        fill = I("lightblue"))
+    dev.off()
+    
+    ### Self-Control Influences
+    jpeg("../images/Q5_Plot-Gender_BuyNowThinkLater.jpg")
+    qplot(x = savingHabit$Gender, y = savingHabit$BuyNowThinkLater,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Gender", 
+        ylab = "Buy Now Think Later",
+        fill = I("lightblue"))
+    dev.off()
+    
+    ### Saving Influences
+    jpeg("../images/Q5_Plot-Gender_PutMoneyAside.jpg")
+    qplot(x = savingHabit$Gender, y = savingHabit$PutMoneyAside,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Gender", 
+        ylab = "Put Money Aside",
+        fill = I("lightblue"))
+    dev.off()
 
 genderFinancial <- t.test(financialInfluences ~ savingHabit$Gender, data = savingHabit)
 genderParents <- t.test(parentsInfluences ~ savingHabit$Gender, data = savingHabit)
@@ -341,41 +352,51 @@ genderPeer <- t.test(peerInfluences ~ savingHabit$Gender, data = savingHabit)
 genderSelfControl <- t.test( selfcontrolInfluences ~ savingHabit$Gender, data = savingHabit)
 genderSaving <- t.test(savingAttitude ~ savingHabit$Gender, data = savingHabit)
 
-# HYPOTHESIS TEST WITH ALL PART TIME AND ATTRIBUTES
-# Financial Influences
-qplot(x = savingHabit$PartTime, y = financialInfluences,
-      geom = "boxplot", data = savingHabit,
-      xlab = "Part Time", 
-      ylab = "Money Management Difficulty",
-      fill = I("lightblue"))
-
-# Parents Influences
-qplot(x = savingHabit$PartTime, y = parentsInfluences,
-      geom = "boxplot", data = savingHabit,
-      xlab = "Gender", 
-      ylab = "Parents Good Example",
-      fill = I("lightblue"))
-
-# Peer Influences
-qplot(x = savingHabit$PartTime, y = peerInfluences,
-      geom = "boxplot", data = savingHabit,
-      xlab = "Gender", 
-      ylab = "Discuss With Friends",
-      fill = I("lightblue"))
-
-# Self-Control Influences
-qplot(x = savingHabit$PartTime, y = selfcontrolInfluences,
-      geom = "boxplot", data = savingHabit,
-      xlab = "Gender", 
-      ylab = "Buy Now Think Later",
-      fill = I("lightblue"))
-
-# Saving Attitude
-qplot(x = savingHabit$PartTime, y = savingAttitude,
-      geom = "boxplot", data = savingHabit,
-      xlab = "Gender", 
-      ylab = "Put Money Aside",
-      fill = I("lightblue"))
+  ## HYPOTHESIS TEST WITH ALL PART TIME AND ATTRIBUTES
+    ### Financial Influences
+    jpeg("../images/Q5_Plot-PartTime_MoneyMgmtDifficulty.jpg")
+    qplot(x = savingHabit$PartTime, y = savingHabit$MoneyMgmtDifficulty,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Part Time", 
+        ylab = "Money Management Difficulty",
+        fill = I("lightblue"))
+    dev.off()
+    
+    ### Parents Influences
+    jpeg("../images/Q5_Plot-PartTime_ParentsGoodExample.jpg")
+    qplot(x = savingHabit$PartTime, y = savingHabit$ParentsGoodExample,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Part Time", 
+        ylab = "Parents Good Example",
+        fill = I("lightblue"))
+    dev.off()
+    
+    ### Peer Influences
+    jpeg("../images/Q5_Plot-PartTime_DiscussWithFriends.jpg")
+    qplot(x = savingHabit$PartTime, y = savingHabit$DiscussWithFriends,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Part Time", 
+        ylab = "Discuss With Friends",
+        fill = I("lightblue"))
+    dev.off()
+    
+    ### Self-Control Influences
+    jpeg("../images/Q5_Plot-PartTime_BuyNowThinkLater.jpg")
+    qplot(x = savingHabit$PartTime, y = savingHabit$BuyNowThinkLater,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Part Time", 
+        ylab = "Buy Now Think Later",
+        fill = I("lightblue"))
+    dev.off()
+    
+    ### Saving Attitude
+    jpeg("../images/Q5_Plot-PartTime_PutMoneyAside.jpg")
+    qplot(x = savingHabit$PartTime, y = savingHabit$PutMoneyAside,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Part Time", 
+        ylab = "Put Money Aside",
+        fill = I("lightblue"))
+    dev.off()
 
 PTFinancial <- t.test(financialInfluences ~ savingHabit$PartTime, data = savingHabit)
 PTParents <- t.test(parentsInfluences ~ savingHabit$PartTime, data = savingHabit)
@@ -385,26 +406,31 @@ PTSaving <- t.test(savingAttitude ~ savingHabit$PartTime, data = savingHabit)
 # </Q5_2(b)>
 
 
-
-
 # <Q5_2(c)>
-
+## No code, just comment will do.
 # </Q5_2(c)>
 
 
-
 # <Q5_2(d)>
-# Financial Awareness Scatter Plot
-scatter.smooth(x=financialInfluences, y = savingAttitude, xlab="Money Management", ylab="Saving Habits", main="Financial Awareness")
-
-# Parents influence Scatter Plot
-scatter.smooth(x=parentsInfluences, y = savingAttitude, xlab="Parents Good Example", ylab="Saving Habits", main="Financial Awareness")
-
-# Peer influence Scatter Plot
-scatter.smooth(x=peerInfluences, y = savingAttitude, xlab="Discuss With Friends", ylab="Saving Habits", main="Financial Awareness")
-
-# Self-Control influence Scatter Plot
-scatter.smooth(x=selfcontrolInfluences, y = savingAttitude, xlab="Buy Now Think Later", ylab="Saving Habits", main="Financial Awareness")
+  ## Financial Awareness Scatter Plot
+  jpeg("../images/Q5_Scatter-PutMoneyAside_MoneyMgmtDifficulty.jpg")
+  scatter.smooth(x=savingHabit$MoneyMgmtDifficulty, y = savingHabit$PutMoneyAside, xlab="Money Management", ylab="Saving Habits", main="Financial Awareness")
+  dev.off()
+  
+  ## Parents influence Scatter Plot
+  jpeg("../images/Q5_Scatter-PutMoneyAside_ParentsGoodExample.jpg")
+  scatter.smooth(x=savingHabit$ParentsGoodExample, y = savingHabit$PutMoneyAside, xlab="Parents Good Example", ylab="Saving Habits", main="Parent's Influence")
+  dev.off()
+  
+  ## Peer influence Scatter Plot
+  jpeg("../images/Q5_Scatter-PutMoneyAside_DiscussWithFriends.jpg")
+  scatter.smooth(x=savingHabit$DiscussWithFriends, y = savingHabit$PutMoneyAside, xlab="Discuss With Friends", ylab="Saving Habits", main="Peer Influence Awareness")
+  dev.off()
+  
+  ## Self-Control influence Scatter Plot
+  jpeg("../images/Q5_Scatter-PutMoneyAside_BuyNowThinkLater.jpg")
+  scatter.smooth(x=savingHabit$BuyNowThinkLater, y = savingHabit$PutMoneyAside, xlab="Buy Now Think Later", ylab="Saving Habits", main="Self-Control Awareness")
+  dev.off()
 
 financialLinearModel <- lm(financialInfluences ~ savingAttitude, data = savingHabit)
 parentsLinearModel <- lm(parentsInfluences ~ savingAttitude, data = savingHabit)
@@ -412,10 +438,10 @@ peerLinearModel <- lm(peerInfluences ~ savingAttitude, data = savingHabit)
 selfcontrolLinearModel <- lm(selfcontrolInfluences ~ savingAttitude, data = savingHabit)
 
 # Use details from here to construct
-financialLinearModel
-parentsLinearModel
-peerLinearModel
-selfcontrolLinearModel
+print(financialLinearModel)
+print(parentsLinearModel)
+print(peerLinearModel)
+print(selfcontrolLinearModel)
 
 # Find smallest error
 sigmaFinancial <- sigma(financialLinearModel)*100/mean(savingAttitude)
@@ -428,7 +454,6 @@ cat("\n The variable affected the most on saving attitude is Financial.")
 # </Q5_2(d)>
 
 
-
 # <Q5_2(e)>
 # Finding the Linear correlation coefficient between each Attributes
 coeFinancial <- cor(financialInfluences, savingAttitude)
@@ -436,174 +461,11 @@ coeParents <- cor(parentsInfluences, savingAttitude)
 coePeer <- cor(peerInfluences, savingAttitude)
 coeSelfControl <- cor(selfcontrolInfluences, savingAttitude)
 cat(" The correlation coefficient of financial is: ", coeFinancial, "\n", "The correlation coefficient of Parents is: ", coeParents, " \n The correlation coefficient of Peer is: ", coePeer, "\n The correlation coefficient of Self-Control is: ", coeSelfControl)
-
 # </Q5_2(e)>
 
 
- 
 # <Q5_2(f)>
-
 factors = c(rep("financialInfluences", 60), rep("parentInfluences", 60), rep("peerInfluences", 60), rep("selfcontrolInfluences", 60), rep("Age", 60), rep("Faculty", 60), rep("Financial", 60), rep("Allowance", 60))
-=======
-# <Q5_2(b)>
-    library(ggplot2)
-    library(dplyr)
-
-  ## HYPOTHESIS TEST WITH ALL GENDER AND ATTRIBUTES
-    ### Financial Influences
-    jpeg("../images/Q5_Plot-Gender_MoneyMgmtDifficulty.jpg")
-    qplot(x = savingHabit$Gender, y = savingHabit$MoneyMgmtDifficulty,
-          geom = "boxplot", data = savingHabit,
-          xlab = "Gender", 
-          ylab = "Money Management Difficulty",
-          fill = I("lightblue"))
-    dev.off()
-    
-    ### Parents Influences
-    jpeg("../images/Q5_Plot-Gender_ParentsGoodExample.jpg")
-    qplot(x = savingHabit$Gender, y = savingHabit$ParentsGoodExample,
-          geom = "boxplot", data = savingHabit,
-          xlab = "Gender", 
-          ylab = "Parents Good Example",
-          fill = I("lightblue"))
-    dev.off()
-    
-    ### Peer Influences
-    jpeg("../images/Q5_Plot-Gender_DiscussWithFriends.jpg")
-    qplot(x = savingHabit$Gender, y = savingHabit$DiscussWithFriends,
-          geom = "boxplot", data = savingHabit,
-          xlab = "Gender", 
-          ylab = "Discuss With Friends",
-          fill = I("lightblue"))
-    dev.off()
-    
-    ### Self-Control Influences
-    jpeg("../images/Q5_Plot-Gender_BuyNowThinkLater.jpg")
-    qplot(x = savingHabit$Gender, y = savingHabit$BuyNowThinkLater,
-          geom = "boxplot", data = savingHabit,
-          xlab = "Gender", 
-          ylab = "Buy Now Think Later",
-          fill = I("lightblue"))
-    dev.off()
-    
-    ### Saving Influences
-    jpeg("../images/Q5_Plot-Gender_PutMoneyAside.jpg")
-    qplot(x = savingHabit$Gender, y = savingHabit$PutMoneyAside,
-          geom = "boxplot", data = savingHabit,
-          xlab = "Gender", 
-          ylab = "Put Money Aside",
-          fill = I("lightblue"))
-    dev.off()
-
-  ## HYPOTHESIS TEST WITH ALL PART TIME AND ATTRIBUTES
-    ### Financial Influences
-    jpeg("../images/Q5_Plot-PartTime_MoneyMgmtDifficulty.jpg")
-    qplot(x = savingHabit$PartTime, y = savingHabit$MoneyMgmtDifficulty,
-          geom = "boxplot", data = savingHabit,
-          xlab = "Part Time", 
-          ylab = "Money Management Difficulty",
-          fill = I("lightblue"))
-    dev.off()
-    
-    ### Parents Influences
-    jpeg("../images/Q5_Plot-PartTime_ParentsGoodExample.jpg")
-    qplot(x = savingHabit$PartTime, y = savingHabit$ParentsGoodExample,
-          geom = "boxplot", data = savingHabit,
-          xlab = "Gender", 
-          ylab = "Parents Good Example",
-          fill = I("lightblue"))
-    dev.off()
-    
-    ### Peer Influences
-    jpeg("../images/Q5_Plot-PartTime_DiscussWithFriends.jpg")
-    qplot(x = savingHabit$PartTime, y = savingHabit$DiscussWithFriends,
-          geom = "boxplot", data = savingHabit,
-          xlab = "Gender", 
-          ylab = "Discuss With Friends",
-          fill = I("lightblue"))
-    dev.off()
-    
-    ### Self-Control Influences
-    jpeg("../images/Q5_Plot-PartTime_BuyNowThinkLater.jpg")
-    qplot(x = savingHabit$PartTime, y = savingHabit$BuyNowThinkLater,
-          geom = "boxplot", data = savingHabit,
-          xlab = "Gender", 
-          ylab = "Buy Now Think Later",
-          fill = I("lightblue"))
-    dev.off()
-    
-    ### Saving Attitude
-    jpeg("../images/Q5_Plot-PartTime_PutMoneyAside.jpg")
-    qplot(x = savingHabit$PartTime, y = savingHabit$PutMoneyAside,
-          geom = "boxplot", data = savingHabit,
-          xlab = "Gender", 
-          ylab = "Put Money Aside",
-          fill = I("lightblue"))
-    dev.off()
-
-# </Q5_2(b)>
-
-# <Q5_2(c)>
-
-# </Q5_2(c)>
-
-# <Q5_2(d)>
-  ## Simple Linear Regression (Saving Attitude [For now I use only put money aside] as the attributes is dependent variables)
-
-genderFinancial <- t.test(savingHabit$MoneyMgmtDifficulty ~ savingHabit$Gender, data = savingHabit)
-genderParents <- t.test(savingHabit$ParentsGoodExample ~ savingHabit$Gender, data = savingHabit)
-genderPeer <- t.test(savingHabit$DiscussWithFriends ~ savingHabit$Gender, data = savingHabit)
-genderSelfControl <- t.test(savingHabit$BuyNowThinkLater ~ savingHabit$Gender, data = savingHabit)
-genderSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$Gender, data = savingHabit)
-PTFinancial <- t.test(savingHabit$MoneyMgmtDifficulty ~ savingHabit$PartTime, data = savingHabit)
-PTParents <- t.test(savingHabit$ParentsGoodExample ~ savingHabit$PartTime, data = savingHabit)
-PTPeer <- t.test(savingHabit$DiscussWithFriends ~ savingHabit$PartTime, data = savingHabit)
-PTSelfControl <- t.test(savingHabit$BuyNowThinkLater ~ savingHabit$PartTime, data = savingHabit)
-PTSaving <- t.test(savingHabit$PutMoneyAside ~ savingHabit$PartTime, data = savingHabit)
-  
-  ## Financial Awareness Scatter Plot
-  jpeg("../images/Q5_Scatter-PutMoneyAside_MoneyMgmtDifficulty.jpg")
-  scatter.smooth(x=savingHabit$MoneyMgmtDifficulty, y = savingHabit$PutMoneyAside, xlab="Money Management", ylab="Saving Habits", main="Financial Awareness")
-  dev.off()
-  
-  ## Parents influence Scatter Plot
-  jpeg("../images/Q5_Scatter-PutMoneyAside_ParentsGoodExample.jpg")
-  scatter.smooth(x=savingHabit$ParentsGoodExample, y = savingHabit$PutMoneyAside, xlab="Parents Good Example", ylab="Saving Habits", main="Financial Awareness")
-  dev.off()
-  
-  ## Peer influence Scatter Plot
-  jpeg("../images/Q5_Scatter-PutMoneyAside_DiscussWithFriends.jpg")
-  scatter.smooth(x=savingHabit$DiscussWithFriends, y = savingHabit$PutMoneyAside, xlab="Discuss With Friends", ylab="Saving Habits", main="Financial Awareness")
-  dev.off()
-  
-  ## Self-Control influence Scatter Plot
-  jpeg("../images/Q5_Scatter-PutMoneyAside_BuyNowThinkLater.jpg")
-  scatter.smooth(x=savingHabit$BuyNowThinkLater, y = savingHabit$PutMoneyAside, xlab="Buy Now Think Later", ylab="Saving Habits", main="Financial Awareness")
-  dev.off()
-  
-  
-  ## Finding the Linear correlation coefficient between each Attributes
-  print("The correlation coefficient of financial is:")
-  print(cor(savingHabit$MoneyMgmtDifficulty, savingHabit$PutMoneyAside))
-  print("The correlation coefficient of parents is:")
-  print(cor(savingHabit$ParentsGoodExample, savingHabit$PutMoneyAside))
-  print("The correlation coefficient of peers is:")
-  print(cor(savingHabit$DiscussWithFriends, savingHabit$PutMoneyAside))
-  print("The correlation coefficient of self-control is:")
-  print(cor(savingHabit$BuyNowThinkLater, savingHabit$PutMoneyAside))
-  
-  financialLinearModel <- lm(savingHabit$MoneyMgmtDifficulty ~ savingHabit$PutMoneyAside, data = savingHabit)
-  parentsLinearModel <- lm(savingHabit$ParentsGoodExample ~ savingHabit$PutMoneyAside, data = savingHabit)
-  peerLinearModel <- lm(savingHabit$DiscussWithFriends ~ savingHabit$PutMoneyAside, data = savingHabit)
-  selfcontrolLinearModel <- lm(savingHabit$BuyNowThinkLater ~ savingHabit$PutMoneyAside, data = savingHabit)
-  
-  summary(financialLinearModel)
-  summary(parentsLinearModel)
-  summary(peerLinearModel)
-  summary(selfcontrolLinearModel)
-  
-  
-# </Q5_2(d)>
 library(BBmisc)
 savingHabit$Allowance = normalize(savingHabit$Allowance, method = "standardize", range = c(0, 5), margin = 1L, on.constant = "quiet")
 savingHabit$Age = normalize(savingHabit$Age, method = "standardize", range = c(0, 5), margin = 1L, on.constant = "quiet")
@@ -611,7 +473,10 @@ savingHabit$Age = normalize(savingHabit$Age, method = "standardize", range = c(0
 combinedData = c(financialInfluences, parentsInfluences,peerInfluences,selfcontrolInfluences, savingHabit$Age, savingHabit$Faculty, savingHabit$FinancialMethods, savingHabit$Allowance)
 
 df <- data.frame(factors,combinedData)
+jpeg("../images/Q5_CombinedDataPlot.jpg")
 plot(combinedData ~ factors, data=df)
-aov(combinedData ~ factors, data =df)
+dev.off()
+print(aov(combinedData ~ factors, data =df))
+summary(aov)
 
 # </Q5_2(f)>
