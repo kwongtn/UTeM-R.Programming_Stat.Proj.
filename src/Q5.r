@@ -443,10 +443,17 @@ cat(" The correlation coefficient of financial is: ", coeFinancial, "\n", "The c
 
  
 # <Q5_2(f)>
-meansOfEveryvariable = (financialInfluences + parentsInfluences + peerInfluences + selfcontrolInfluences)/4
 
-anovaAge <- aov(meansOfEveryvariable ~ savingHabit$Age, data = savingHabit)
-anovaFaculty <- aov(meansOfEveryvariable ~ savingHabit$Faculty, data = savingHabit)
-anovaFinancial <- aov(meansOfEveryvariable ~ savingHabit$FinancialMethods, data = savingHabit)
-anovaAllowance <- aov(meansOfEveryvariable ~ savingHabit$Allowance, data = savingHabit)
+factors = c(rep("financialInfluences", 60), rep("parentInfluences", 60), rep("peerInfluences", 60), rep("selfcontrolInfluences", 60), rep("Age", 60), rep("Faculty", 60), rep("Financial", 60), rep("Allowance", 60))
+
+library(BBmisc)
+savingHabit$Allowance = normalize(savingHabit$Allowance, method = "standardize", range = c(0, 5), margin = 1L, on.constant = "quiet")
+savingHabit$Age = normalize(savingHabit$Age, method = "standardize", range = c(0, 5), margin = 1L, on.constant = "quiet")
+
+combinedData = c(financialInfluences, parentsInfluences,peerInfluences,selfcontrolInfluences, savingHabit$Age, savingHabit$Faculty, savingHabit$FinancialMethods, savingHabit$Allowance)
+
+df <- data.frame(factors,combinedData)
+plot(combinedData ~ factors, data=df)
+aov(combinedData ~ factors, data =df)
+
 # </Q5_2(f)>
