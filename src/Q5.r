@@ -18,6 +18,10 @@
     print("The frequency table for Faculty is :")
     print(cbind(faculty.freq))
     print("")
+    financialMethods.freq = table(savingHabit$FinancialMethods)
+    print("The frequency table for Financial Methods is :")
+    print(cbind(financialMethods.freq))
+    print("")
     allowance.freq = table(savingHabit$Allowance)
     print("The frequency table for Allowance is :")
     print(cbind(allowance.freq))
@@ -79,6 +83,10 @@
     faculty.relFreq = table(savingHabit$Faculty) / rows
     print("The relative frequency table for Faculty is: ")
     print(cbind(faculty.relFreq))
+    print("")
+    financialMethods.relFreq = table(savingHabit$FinancialMethods) / rows
+    print("The relative frequency table for Financial Methods is: ")
+    print(cbind(financialMethods.relFreq))
     print("")
     allowance.relFreq = table(savingHabit$Allowance) / rows
     print("The relative frequency table for Allowance is: ")
@@ -142,6 +150,10 @@
     print("The percentage distribution table for faculty is: ")
     print(cbind(faculty.percentageDist))
     print("")
+    financialMethods.percentageDist = financialMethods.relFreq * 100
+    print("The percentage distribution table for financial methods is: ")
+    print(cbind(financialMethods.percentageDist))
+    print("")
     allowance.percentageDist = allowance.relFreq * 100
     print("The percentage distribution table for allowance is: ")
     print(cbind(allowance.percentageDist))
@@ -201,6 +213,9 @@
     jpeg("../images/Q5_Bar-faculty.jpg")
     barplot(faculty.freq, main = "Frequency of Faculty")
     dev.off()
+    jpeg("../images/Q5_Bar-financialMethods.jpg")
+    barplot(financialMethods.freq, main = "Frequency of Financial Mehtods")
+    dev.off()
     jpeg("../images/Q5_Bar-allowance.jpg")
     barplot(allowance.freq, main = "Frequency of Allowance (Midpoint of bins)")
     dev.off()
@@ -247,6 +262,9 @@
     dev.off()
     jpeg("../images/Q5_Pie-faculty.jpg")
     pie(faculty.percentageDist, main="Percentage Distribution of Faculty")
+    dev.off()
+    jpeg("../images/Q5_Pie-financialMethods.jpg")
+    pie(financialMethods.percentageDist, main="Percentage Distribution of Financial Methods")
     dev.off()
     jpeg("../images/Q5_Pie-allowance.jpg")
     pie(allowance.percentageDist, main="Percentage Distribution of Allowance (Midpoint of bins)")
