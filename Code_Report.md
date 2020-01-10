@@ -1496,15 +1496,577 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     > ![If often compare prices before making a purchase: Pie Chart](./images/Q5_Pie-comparePrices.jpg)
 
 #### For Q5_2(b)
+- We first import the required libraries:
+  ```
+  library(ggplot2)
+  library(dplyr)
+  ```
+
+- We get the central tendancy mean of each of the variables:
+  - Financial Influences
+    ```
+    financialInfluences = (savingHabit$MoneyMgmtDifficulty + savingHabit$AbilityPrepareBudget)/2
+    print(financialInfluences)
+    ```
+    > Output:
+    > ```
+    > [1] 4.5 3.0 3.0 3.5 3.0 3.0 3.0 3.5 2.5 3.0
+    > [11] 1.5 2.5 3.0 5.0 3.0 4.0 3.5 2.5 2.0 3.0
+    > [21] 4.0 4.5 3.5 3.5 3.0 3.0 3.0 3.0 3.0 3.0
+    > [31] 2.0 3.5 2.5 3.0 2.5 5.0 3.5 3.0 3.0 2.5
+    > [41] 3.0 1.5 4.0 4.0 3.5 3.0 3.5 4.0 4.0 3.0
+    > [51] 4.0 4.5 4.5 5.0 4.0 4.0 2.0 3.0 3.0 3.0
+    > ```
+  - Parents' Influences
+    ```
+    parentsInfluences = (savingHabit$ParentsGoodExample + savingHabit$AppreciateAdvice)/2
+    print(parentsInfluences)
+    ```
+    > Output:
+    > ```
+    >  [1] 4.5 3.0 4.0 3.5 3.5 3.5 3.0 5.0 3.0 5.0
+    > [11] 5.0 3.0 3.5 5.0 4.0 4.0 4.0 5.0 4.0 4.0
+    > [21] 3.0 3.5 5.0 3.5 3.0 3.0 4.0 3.5 5.0 3.0
+    > [31] 4.0 3.0 4.5 3.5 2.0 4.0 4.5 4.5 5.0 4.0
+    > [41] 3.5 2.5 4.5 4.5 4.5 3.0 3.0 4.5 3.5 5.0
+    > [51] 4.5 5.0 5.0 5.0 3.0 5.0 3.5 4.0 3.0 3.5
+    > ```
+  - Peer Influences
+    ```
+    peerInfluences = (savingHabit$FriendsSaveRegularly + savingHabit$DiscussWithFriends)/2
+    print(peerInfluences)
+    ```
+    > Output:
+    > ```
+    >  [1] 2.0 3.0 3.0 2.5 2.0 2.0 2.0 1.5 3.0 2.5
+    > [11] 2.5 3.0 3.5 4.5 3.0 2.0 3.0 3.0 3.0 3.5
+    > [21] 3.0 4.0 3.5 3.0 3.0 3.0 1.5 3.5 1.5 3.0
+    > [31] 3.5 3.0 2.0 3.5 2.5 3.0 3.0 3.5 1.5 2.0
+    > [41] 3.0 3.0 3.5 2.0 3.5 3.0 3.0 4.0 3.0 4.5
+    > [51] 1.0 4.5 5.0 2.5 2.5 4.0 3.0 3.0 3.0 2.0
+    > ```
+  - Self-Control Influences
+    ```
+    selfcontrolInfluences = (savingHabit$BuyNowThinkLater + savingHabit$RarelyAchieveGoal)/2
+    print(selfcontrolInfluences)
+    ```
+    > Output:
+    > ```
+    >  [1] 1.5 3.0 4.0 2.5 2.0 3.5 2.5 3.0 4.0 3.5
+    > [11] 2.5 3.5 3.0 3.0 3.0 2.5 2.5 5.0 2.5 2.5
+    > [21] 3.0 2.0 2.0 1.5 3.0 2.0 1.0 1.5 1.0 3.0
+    > [31] 3.0 2.0 2.5 3.0 3.0 1.5 3.5 3.0 4.5 2.5
+    > [41] 3.0 4.0 2.0 4.0 3.5 3.0 3.0 4.0 2.5 3.0
+    > [51] 3.0 5.0 2.5 1.5 3.0 1.0 4.5 4.0 3.0 2.5
+    > ```
+  - Saving Attitude Influences
+    ```
+    savingAttitude = (savingHabit$PutMoneyAside + savingHabit$ComparePrices)/2
+    print(savingAttitude)
+    ```
+    > Output:
+    > ```
+    >  [1] 4.5 3.0 4.5 3.5 4.0 4.0 4.0 3.0 2.5 1.5
+    > [11] 2.5 3.0 3.0 4.5 4.0 3.0 4.0 4.5 3.5 4.0
+    > [21] 4.0 3.5 4.0 3.5 3.0 3.0 3.0 4.5 2.5 3.0
+    > [31] 3.5 4.0 4.0 4.0 3.0 4.5 4.0 5.0 4.0 4.0
+    > [41] 4.0 4.0 4.0 3.0 4.0 3.0 2.5 4.0 3.0 4.5
+    > [51] 5.0 5.0 4.0 4.0 3.0 3.0 2.5 4.0 3.0 3.5
+    > ```
+
+- We plot the graph for `Gender` against each of the variables:
+  - Financial Influences
+    ```
+    jpeg("../images/Q5_Plot-Gender_MoneyMgmtDifficulty.jpg")
+      qplot(x = savingHabit$Gender, y = savingHabit$MoneyMgmtDifficulty,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Gender", 
+        ylab = "Money Management Difficulty",
+        fill = I("lightblue"))
+      dev.off()
+    ```
+    > Output:
+    > ![Gender against Financial Influences Plot](./images/Q5_Plot-Gender_MoneyMgmtDifficulty.jpg)
+  - Parents' Influences
+    ```
+    jpeg("../images/Q5_Plot-Gender_ParentsGoodExample.jpg")
+      qplot(x = savingHabit$Gender, y = savingHabit$ParentsGoodExample,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Gender", 
+        ylab = "Parents Good Example",
+        fill = I("lightblue"))
+      dev.off()
+    ```
+    > Output:
+    > ![Gender against Parents' Influences Plot](./images/Q5_Plot-Gender_ParentsGoodExample.jpg)
+  - Peer Influences
+    ```
+    jpeg("../images/Q5_Plot-Gender_DiscussWithFriends.jpg")
+      qplot(x = savingHabit$Gender, y = savingHabit$DiscussWithFriends,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Gender", 
+        ylab = "Discuss With Friends",
+        fill = I("lightblue"))
+      dev.off()
+    ```
+    > Output:
+    > ![Gender against Peer Influences Plot](./images/Q5_Plot-Gender_DiscussWithFriends.jpg)
+  - Self-Control Influences
+    ```
+    jpeg("../images/Q5_Plot-Gender_BuyNowThinkLater.jpg")
+      qplot(x = savingHabit$Gender, y = savingHabit$BuyNowThinkLater,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Gender", 
+        ylab = "Buy Now Think Later",
+        fill = I("lightblue"))
+      dev.off()
+    ```
+    > Output:
+    > ![Gender against Self-Control Influences Plot](./images/Q5_Plot-Gender_BuyNowThinkLater.jpg)
+  - Saving Attitude Influences
+    ```
+    jpeg("../images/Q5_Plot-Gender_PutMoneyAside.jpg")
+      qplot(x = savingHabit$Gender, y = savingHabit$PutMoneyAside,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Gender", 
+        ylab = "Put Money Aside",
+        fill = I("lightblue"))
+      dev.off()
+    ```
+    > Output:
+    > ![Gender against Saving Attitude Plot](./images/Q5_Plot-Gender_PutMoneyAside.jpg)
+
+- Then, the t-test was done for all variables for `gender`:
+  - Financial
+    ```
+    genderFinancial <- t.test(financialInfluences ~ savingHabit$Gender, data = savingHabit)
+    print(genderFinancial)
+    ```
+    > Output:
+    > ```
+    > 	Welch Two Sample t-test
+    > 
+    > data:  financialInfluences by savingHabit$Gender
+    > t = -0.8883, df = 57.75, p-value = 0.3781
+    > alternative hypothesis: true difference in means is not equal to 0
+    > 95 percent confidence interval:
+    >  -0.5882672  0.2266600
+    > sample estimates:
+    > mean in group Female   mean in group Male 
+    >             3.178571             3.359375
+    > ```
+  - Parents
+    ```
+    genderParents <- t.test(parentsInfluences ~ savingHabit$Gender, data = savingHabit)
+    print(genderParents)
+    ```
+    > Output:
+    > ```
+    > 	Welch Two Sample t-test
+    > 
+    > data:  parentsInfluences by savingHabit$Gender
+    > t = -0.70053, df = 55.504, p-value =
+    > 0.4865
+    > alternative hypothesis: true difference in means is not equal to 0
+    > 95 percent confidence interval:
+    >  -0.5600676  0.2698890
+    > sample estimates:
+    > mean in group Female   mean in group Male 
+    >             3.839286             3.984375 
+    > ```
+  - Peer
+    ```
+    genderPeer <- t.test(peerInfluences ~ savingHabit$Gender, data = savingHabit)
+    print(genderPeer)
+    ```
+    > Output:
+    > ```
+    > 	Welch Two Sample t-test
+    > 
+    > data:  peerInfluences by savingHabit$Gender
+    > t = 0.094828, df = 57.009, p-value =
+    > 0.9248
+    > alternative hypothesis: true difference in means is not equal to 0
+    > 95 percent confidence interval:
+    >  -0.4041317  0.4443102
+    > sample estimates:
+    > mean in group Female   mean in group Male 
+    >             2.910714             2.890625 
+    > ```
+  - Self-Control
+    ```
+    genderSelfControl <- t.test( selfcontrolInfluences ~ savingHabit$Gender, data = savingHabit)
+    print(genderSelfControl)
+    ```
+    > Output:
+    > ```
+    > 	Welch Two Sample t-test
+    > 
+    > data:  selfcontrolInfluences by savingHabit$Gender
+    > t = 1.1748, df = 57.546, p-value = 0.2449
+    > alternative hypothesis: true difference in means is not equal to 0
+    > 95 percent confidence interval:
+    >  -0.1964812  0.7545169
+    > sample estimates:
+    > mean in group Female   mean in group Male 
+    >             2.982143             2.703125 
+    > ```
+  - Saving Attitude
+    ```
+    genderSaving <- t.test(savingAttitude ~ savingHabit$Gender, data = savingHabit)
+    print(genderSaving)
+    ```
+    > Output:
+    > ```
+    > 	Welch Two Sample t-test
+    > 
+    > data:  savingAttitude by savingHabit$Gender
+    > t = -1.4488, df = 57.971, p-value =
+    > 0.1528
+    > alternative hypothesis: true difference in means is not equal to 0
+    > 95 percent confidence interval:
+    >  -0.6379337  0.1022194
+    > sample estimates:
+    > mean in group Female   mean in group Male 
+    >             3.482143             3.750000 
+    > ```
+
+- We plot the graph for `Part Time` against each of the variables:
+  - Financial Influences
+    ```
+    jpeg("../images/Q5_Plot-PartTime_MoneyMgmtDifficulty.jpg")
+      qplot(x = savingHabit$PartTime, y = savingHabit$MoneyMgmtDifficulty,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Part Time", 
+        ylab = "Money Management Difficulty",
+        fill = I("lightblue"))
+      dev.off()
+    ```
+    > Output:
+    > ![Financial Influences Graph](./images/Q5_Plot-PartTime_MoneyMgmtDifficulty.jpg)
+  - Parents' Influences
+    ```
+    jpeg("../images/Q5_Plot-PartTime_ParentsGoodExample.jpg")
+      qplot(x = savingHabit$PartTime, y = savingHabit$ParentsGoodExample,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Part Time", 
+        ylab = "Parents Good Example",
+        fill = I("lightblue"))
+      dev.off()
+    ```
+    > Output:
+    > ![Parents' Influences Graph](./images/Q5_Plot-PartTime_ParentsGoodExample.jpg)
+  - Peer Influences
+    ```
+    jpeg("../images/Q5_Plot-PartTime_DiscussWithFriends.jpg")
+      qplot(x = savingHabit$PartTime, y = savingHabit$DiscussWithFriends,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Part Time", 
+        ylab = "Discuss With Friends",
+        fill = I("lightblue"))
+      dev.off()
+    ```
+    > Output:
+    > ![Peer Influences Graph](./images/Q5_Plot-PartTime_DiscussWithFriends.jpg)
+  - Self-Control Influences
+    ```
+    jpeg("../images/Q5_Plot-PartTime_BuyNowThinkLater.jpg")
+      qplot(x = savingHabit$PartTime, y = savingHabit$BuyNowThinkLater,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Part Time", 
+        ylab = "Buy Now Think Later",
+        fill = I("lightblue"))
+      dev.off()
+    ```
+    > Output:
+    > ![Self-Control Influences Graph](./images/Q5_Plot-PartTime_BuyNowThinkLater.jpg)
+  - Saving Attitude
+    ```
+    jpeg("../images/Q5_Plot-PartTime_PutMoneyAside.jpg")
+      qplot(x = savingHabit$PartTime, y = savingHabit$PutMoneyAside,
+        geom = "boxplot", data = savingHabit,
+        xlab = "Part Time", 
+        ylab = "Put Money Aside",
+        fill = I("lightblue"))
+      dev.off()
+    ```
+    > Output:
+    > ![Saving Attitude Graph](./images/Q5_Plot-PartTime_PutMoneyAside.jpg)
+
+- Then, the t-test was done for all variables for `Part Time`:
+  - Financial Influences
+    ```
+    PTFinancial <- t.test(financialInfluences ~ savingHabit$PartTime, data = savingHabit)
+    print(PTFinancial)
+    ```
+    > Output:
+    > ```
+    > 	Welch Two Sample t-test
+    > 
+    > data:  financialInfluences by savingHabit$PartTime
+    > t = 0.099318, df = 11.904, p-value =
+    > 0.9225
+    > alternative hypothesis: true difference in means is not equal to 0
+    > 95 percent confidence interval:
+    >  -0.6287234  0.6887234
+    > sample estimates:
+    >  mean in group No mean in group Yes 
+    >              3.28              3.25 
+    > ```
+  - Parents' Influences
+    ```
+    PTParents <- t.test(parentsInfluences ~ savingHabit$PartTime, data = savingHabit)
+    print(PTParents)
+    ```
+    > Output:
+    > ```
+    > 	Welch Two Sample t-test
+    > 
+    > data:  parentsInfluences by savingHabit$PartTime
+    > t = 0.72931, df = 12.932, p-value =
+    > 0.4788
+    > alternative hypothesis: true difference in means is not equal to 0
+    > 95 percent confidence interval:
+    >  -0.3927603  0.7927603
+    > sample estimates:
+    >  mean in group No mean in group Yes 
+    >              3.95              3.75 
+    > ```
+  - Peer Influences
+    ```
+    PTPeer <- t.test(peerInfluences ~ savingHabit$PartTime, data = savingHabit)
+    print(PTPeer)
+    ```
+    > Output:
+    > ```
+    > 	Welch Two Sample t-test
+    > 
+    > data:  peerInfluences by savingHabit$PartTime
+    > t = -0.87513, df = 11.072, p-value =
+    > 0.4001
+    > alternative hypothesis: true difference in means is not equal to 0
+    > 95 percent confidence interval:
+    >  -1.0539157  0.4539157
+    > sample estimates:
+    >  mean in group No mean in group Yes 
+    >              2.85              3.15 
+    > ```
+  - Self-Control Influences
+    ```
+    PTSelfControl <- t.test(selfcontrolInfluences ~ savingHabit$PartTime, data = savingHabit)
+    print(PTSelfControl)
+    ```
+    > Output:
+    > ```
+    > 	Welch Two Sample t-test
+    > 
+    > data:  selfcontrolInfluences by savingHabit$PartTime
+    > t = -1.0431, df = 11.55, p-value = 0.3182
+    > alternative hypothesis: true difference in means is not equal to 0
+    > 95 percent confidence interval:
+    >  -1.1771446  0.4171446
+    > sample estimates:
+    >  mean in group No mean in group Yes 
+    >              2.77              3.15 
+    > ```
+  - Saving Attitude Influences
+    ```
+    PTSaving <- t.test(savingAttitude ~ savingHabit$PartTime, data = savingHabit)
+    print(PTSaving)
+    ```
+    > Output:
+    > ```
+    > 	Welch Two Sample t-test
+    > 
+    > data:  savingAttitude by savingHabit$PartTime
+    > t = -0.37818, df = 13.761, p-value =
+    > 0.7111
+    > alternative hypothesis: true difference in means is not equal to 0
+    > 95 percent confidence interval:
+    >  -0.6012535  0.4212535
+    > sample estimates:
+    >  mean in group No mean in group Yes 
+    >              3.61              3.70 
+    > ```
 
 #### For Q5_2(c)
-- 
+No code available.
 
-#### For Q5_2(b)
-- 
+#### For Q5_2(d)
+- We generate the scatter plot for each variable:
+  - Financial Awareness
+    ```
+    jpeg("../images/Q5_Scatter-PutMoneyAside_MoneyMgmtDifficulty.jpg")
+    scatter.smooth(x=savingHabit$MoneyMgmtDifficulty, y = savingHabit$PutMoneyAside, xlab="Money Management", ylab="Saving Habits", main="Financial Awareness")
+    dev.off() 
+    ```
+    > Output:
+    > ![Financial Awareness ScatterPlot](./images/Q5_Scatter-PutMoneyAside_MoneyMgmtDifficulty.jpg)
+  - Parents Influence
+    ```
+    jpeg("../images/Q5_Scatter-PutMoneyAside_ParentsGoodExample.jpg")
+    scatter.smooth(x=savingHabit$ParentsGoodExample, y = savingHabit$PutMoneyAside, xlab="Parents Good Example", ylab="Saving Habits", main="Parent's Influence")
+    dev.off() 
+    ```
+    > Output:
+    > ![Parents Influence ScatterPlot](./images/Q5_Scatter-PutMoneyAside_ParentsGoodExample.jpg)
+  - Peer Influence
+    ```
+    jpeg("../images/Q5_Scatter-PutMoneyAside_DiscussWithFriends.jpg")
+    scatter.smooth(x=savingHabit$DiscussWithFriends, y = savingHabit$PutMoneyAside, xlab="Discuss With Friends", ylab="Saving Habits", main="Peer Influence Awareness")
+    dev.off() 
+    ```
+    > Output:
+    > ![Peer Influence ScatterPlot](./images/Q5_Scatter-PutMoneyAside_DiscussWithFriends.jpg)
+  - Self-Control
+    ```
+    jpeg("../images/Q5_Scatter-PutMoneyAside_BuyNowThinkLater.jpg")
+    scatter.smooth(x=savingHabit$BuyNowThinkLater, y = savingHabit$PutMoneyAside, xlab="Buy Now Think Later", ylab="Saving Habits", main="Self-Control Awareness")
+    dev.off()    
+    ```
+    > Output:
+    > ![Self-Control ScatterPlot](./images/Q5_Scatter-PutMoneyAside_BuyNowThinkLater.jpg)
+
+- The linear models for each variable is calculated:
+  - Financial Awareness
+    ```
+    financialLinearModel <- lm(financialInfluences ~ savingAttitude, data = savingHabit)
+    print(financialLinearModel)
+    ```
+    > Output:
+    > ```
+    > Call:
+    > lm(formula = financialInfluences ~ savingAttitude, data = savingHabit)
+    > 
+    > Coefficients:
+    >    (Intercept)  savingAttitude  
+    >         2.0956          0.3253 
+    > ```
+  - Parents Influence
+    ```
+    parentsLinearModel <- lm(parentsInfluences ~ savingAttitude, data = savingHabit)
+    print(parentsLinearModel)
+    ```
+    > Output:
+    > ```
+    > Call:
+    > lm(formula = parentsInfluences ~ savingAttitude, data = savingHabit)
+    > 
+    > Coefficients:
+    >    (Intercept)  savingAttitude  
+    >         2.8313          0.2994
+    > ```
+  - Peer Influence
+    ```
+    peerLinearModel <- lm(peerInfluences ~ savingAttitude, data = savingHabit)
+    print(peerLinearModel)
+    ```
+    > Output:
+    > ```
+    > Call:
+    > lm(formula = peerInfluences ~ savingAttitude, data = savingHabit)
+    > 
+    > Coefficients:
+    >    (Intercept)  savingAttitude  
+    >         2.0028          0.2475 
+    > ```
+  - Self-Control
+    ```
+    selfcontrolLinearModel <- lm(selfcontrolInfluences ~ savingAttitude, data = savingHabit)
+    print(selfcontrolLinearModel)
+    ```
+    > Output:
+    > ```
+    > Call:
+    > lm(formula = selfcontrolInfluences ~ savingAttitude, data = savingHabit)
+    > 
+    > Coefficients:
+    >    (Intercept)  savingAttitude  
+    >        2.51497         0.08782 
+    > ```
+
+- Then, we find the errors in the data:
+  ```
+  sigmaFinancial <- sigma(financialLinearModel)*100/mean(savingAttitude)
+  sigmaParents <- sigma(parentsLinearModel)*100/mean(savingAttitude)
+  sigmaPeer <- sigma(peerLinearModel)*100/mean(savingAttitude)
+  sigmaSelfControl <- sigma(selfcontrolLinearModel)*100/mean(savingAttitude)
+  
+  cat(" Percentage error of Financial: ", sigmaFinancial, "\n Percentage error of Parents: ", sigmaParents, "\n Percentage error of Peer: ", sigmaPeer, "\n Percentage error of Self-Control: ", sigmaSelfControl)
+  ```
+  > Output:
+  > ```
+  > Percentage error of Financial:  20.93333 
+  > Percentage error of Parents:  21.20684 
+  > Percentage error of Peer:  22.02786 
+  > Percentage error of Self-Control:  25.63666
+  > ```
+
+- From that, we can conclude the variable that is affected the most:
+  ```
+  cat("\n The variable affected the most on saving attitude the variable with a percentage error of", max(sigmaFinancial, sigmaParents, sigmaPeer, sigmaSelfControl), ", in this case is Financial.")
+  ```
+  > Output:
+  > ```
+  > The variable affected the most on saving attitude the variable with a percentage error of 25.63666 , in this case is Financial.
+  > ```
 
 #### For Q5_2(e)
-- 
+- We find the linear correlation coefficient using the following code, then print it out:
+  ```
+  coeFinancial <- cor(financialInfluences, savingAttitude)
+  coeParents <- cor(parentsInfluences, savingAttitude)
+  coePeer <- cor(peerInfluences, savingAttitude)
+  coeSelfControl <- cor(selfcontrolInfluences, savingAttitude)
+  cat(" The correlation coefficient of financial is: ", coeFinancial, "\n", "The correlation coefficient of Parents is: ", coeParents, " \n The correlation coefficient of Peer is: ", coePeer, "\n The correlation coefficient of Self-Control is: ", coeSelfControl)
+  ```
+  > Output:
+  > ```
+  > The correlation coefficient of financial is:  0.3004705 
+  > The correlation coefficient of Parents is:  0.2751205  
+  > The correlation coefficient of Peer is:  0.2220588 
+  > The correlation coefficient of Self-Control is:  0.06927013
+  > ```
 
 #### For Q5_2(f)
-- 
+- We first import the required libraries:
+  ```
+  library(BBmisc)
+  ```
+
+- The correlation matrix is calculated and placed into a data frame.
+  ```
+  factors = c(rep("financialInfluences", 60), rep("parentInfluences", 60), rep("peerInfluences", 60), rep("selfcontrolInfluences", 60), rep("Age", 60), rep("Faculty", 60), rep("Financial", 60), rep("Allowance", 60))
+  savingHabit$Allowance = normalize(savingHabit$Allowance, method = "standardize", range = c(0, 5), margin = 1L, on.constant = "quiet")
+  savingHabit$Age = normalize(savingHabit$Age, method = "standardize", range = c(0, 5), margin = 1L, on.constant = "quiet")
+  combinedData = c(financialInfluences, parentsInfluences,peerInfluences,selfcontrolInfluences, savingHabit$Age, savingHabit$Faculty, savingHabit$FinancialMethods, savingHabit$Allowance)
+  df <- data.frame(factors,combinedData)
+  ```
+
+- We calculate the combined data plot
+  ```
+  jpeg("../images/Q5_CombinedDataPlot.jpg")
+  plot(combinedData ~ factors, data=df)
+  dev.off()
+  ```
+  > Output:
+  > ![Combined Data Plot](./images/Q5_CombinedDataPlot.jpg)
+
+- We then make the ANOVA summary.
+  ```
+  print(aov(combinedData ~ factors, data =df))
+  summary(aov)
+  ```
+  > Output:
+  > ```
+  > Call:
+  >    aov(formula = combinedData ~ factors, data = df)
+  > 
+  > Terms:
+  >                   factors Residuals
+  > Sum of Squares  1235.2370  521.9458
+  > Deg. of Freedom         7       472
+  > 
+  > Residual standard error: 1.051579
+  > Estimated effects may be unbalanced
+  > ```
