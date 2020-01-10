@@ -23,29 +23,29 @@ As we are calculating the mean, median, variance and standard deviation of the d
 
 ### The following codes were used (output line breaks are omitted):
 - We first import the data requried:
-```
-library(readxl)
-
-# Import the dataset
-data <- read_xlsx("./data/utc_stat.xlsx", 1)
-
-# Select only Melaka, WP KL, and Perak States data
-year_char <- data[-1,2]
-melaka_visitor <- data[-1,3]
-wp_visitor <- data[-1,4]
-perak_visitor <- data[-1,5]
-```
+  ```
+  library(readxl)
+  
+  # Import the dataset
+  data <- read_xlsx("./data/utc_stat.xlsx", 1)
+  
+  # Select only Melaka, WP KL, and Perak States data
+  year_char <- data[-1,2]
+  melaka_visitor <- data[-1,3]
+  wp_visitor <- data[-1,4]
+  perak_visitor <- data[-1,5]
+  ```
 
 - We then preprocess the data:
-```
-# Convert dataframe to numerical variables
-melaka_visitor = as.numeric(unlist(melaka_visitor))
-wp_visitor = as.numeric(unlist(wp_visitor))
-perak_visitor = as.numeric(unlist(perak_visitor))
-
-# Create a new dataframe of only this 3 states data
-States_df <- data.frame(year_char,melaka_visitor, wp_visitor, perak_visitor)
-```
+  ```
+  # Convert dataframe to numerical variables
+  melaka_visitor = as.numeric(unlist(melaka_visitor))
+  wp_visitor = as.numeric(unlist(wp_visitor))
+  perak_visitor = as.numeric(unlist(perak_visitor))
+  
+  # Create a new dataframe of only this 3 states data
+  States_df <- data.frame(year_char,melaka_visitor, wp_visitor, perak_visitor)
+  ```
 
 - We then calculate the values based on the problem requirements:
   - Mean
@@ -111,19 +111,19 @@ States_df <- data.frame(year_char,melaka_visitor, wp_visitor, perak_visitor)
     ```
     barplot(States_df$melaka_visitor, main = "Bar Plots of Melaka States Visitor", col="skyblue")
     ```
-    Output:
+    > Output:
     > ![Bar Plots of Melaka States Visitor](./images/Q1_BarPlot-Melaka.png)
   - Barplots of WP States Visitor
     ```
     barplot(States_df$wp_visitor, main = "Bar Plots of WP States Visitor", col="green")
     ```
-    Output:
+    > Output:
     > ![Bar Plots of WP States Visitor](./images/Q1_BarPlot-WP.png)
   - Barplots of Perak States Visitor
     ```  
     barplot(States_df$perak_visitor, main = "Bar Plots of Perak States Visitor", col="red")
     ```
-    Output:
+    > Output:
     > ![Bar Plots of Perak States Visitor](./images/Q1_BarPlot-Perak.png)
 
 - The density plots are then drawn:
@@ -131,19 +131,19 @@ States_df <- data.frame(year_char,melaka_visitor, wp_visitor, perak_visitor)
     ```
     plot(density(States_df$melaka_visitor), main = "Density of melaka visitor", col="skyblue" )
     ```
-    Output:
+    > Output:
     > ![Density Plots of Perak States Visitor](./images/Q1_Density-Perak.png)
   - Density plot of WP States Visitor
     ```
     plot(density(States_df$wp_visitor), main = "Density of WP visitor", col="green" )
     ```
-    Output:
+    > Output:
     > ![Density Plots of WP States Visitor](./images/Q1_Density-WP.png)
   - Density plot of Perak States Visitor
     ```
     plot(density(States_df$perak_visitor), main = "Density of Perak visitor", col="red" )
     ```
-    Output:
+    > Output:
     > ![Density Plots of Perak States Visitor](./images/Q1_Density-Perak.png)
     
 - The combined chart for visitors of each state with respect of month was then plotted:
@@ -154,7 +154,7 @@ States_df <- data.frame(year_char,melaka_visitor, wp_visitor, perak_visitor)
   lines(States_df$melaka_visitor, type = "o", col = "skyblue")
   legend("topright", legend=c("Perak", "WP", "Melaka"),col=c("red", "green","skyblue"), lty=1, cex=0.8)
   ```
-  Output:
+  > Output:
   > ![Combined line chart of visitors of each state](./images/Q1_CombinedBar.png)
 
   ### Conclusion
@@ -585,11 +585,10 @@ This question presents problem for data analysis on the `Lunch money per week` o
 ## Question 5
 Refer to [Q5 Report](./Q5_Report.md) for reporting style stuff.  
 
-This question presents problems for data analysis on the Saving Habits of students in UTeM. [This dataset](./src/data/Q5_SavingHabit_cleaned.md) was obtained via a Google Form with the questions as defined [here](./src/data/Q5_questionnaire.md).  
+This question presents problems for data analysis on the Saving Habits of students in UTeM. [This dataset](./src/data/Q5_SavingHabit_cleaned.txt) was obtained via a Google Form with the questions as defined [here](./src/data/Q5_questionnaire.md).  
 We will therefore be discussing the outputs and rationalle behind the commands used in the script.
 
 ### The following codes were used (output line breaks are omitted):
-#### For Q5_2(a)
 - We first import the dataset and view it:
   ```
   savingHabit <- read.delim("./data/Q5_SavingHabit_cleaned.txt")
@@ -600,6 +599,8 @@ We will therefore be discussing the outputs and rationalle behind the commands u
   > ```
   > 60 rows of data imported.NULL
   > ```
+
+#### For Q5_2(a)
 
 - We then calculate the frequencies of each column:
   - Gender
@@ -625,7 +626,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     > 21.5       32
     > 24          4
     > ```
-  - Saving Habit
+  - Faculty
     ```
     faculty.freq = table(savingHabit$Faculty)
     print(cbind(faculty.freq))
@@ -639,6 +640,18 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     > FPTT             3
     > FTKEE            2
     > FTMK            40
+    > ```
+  - Financial Methods
+    ```
+    financialMethods.freq = table(savingHabit$FinancialMethods)
+    print(cbind(financialMethods.freq))
+    ```
+    > Output:
+    > ```
+    >         financialMethods.freq
+    > Others                      5
+    > Parents                    16
+    > PTPTN                      39
     > ```
   - Allowance
     ```
@@ -824,7 +837,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     > 21.5  0.53333333
     > 24    0.06666667
     > ```
-  - Saving Habit
+  - Faculty
     ```
     faculty.relFreq = table(savingHabit$Faculty) / rows
     print(cbind(faculty.relFreq))
@@ -838,6 +851,18 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     > FPTT       0.05000000
     > FTKEE      0.03333333
     > FTMK       0.66666667
+    > ```
+  - Financial Methods
+    ```
+    financialMethods.relFreq = table(savingHabit$FinancialMethods) / rows
+    print(cbind(financialMethods.relFreq))
+    ```
+    > Output:
+    > ```
+    >         financialMethods.relFreq
+    > Others                0.08333333
+    > Parents               0.26666667
+    > PTPTN                 0.65000000
     > ```
   - Allowance
     ```
@@ -1023,7 +1048,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     > 21.5          53.333333
     > 24             6.666667
     > ```
-  - Saving Habit
+  - Faculty
     ```
     faculty.percentageDist = faculty.relFreq * 100
     print(cbind(faculty.percentageDist))
@@ -1037,6 +1062,18 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     > FPTT                5.000000
     > FTKEE               3.333333
     > FTMK               66.666667
+    > ```
+  - Financial Methods
+    ```
+    financialMethods.percentageDist = financialMethods.relFreq * 100
+    print(cbind(financialMethods.percentageDist))
+    ```
+    > Output:
+    > ```
+    >         financialMethods.percentageDist
+    > Others                         8.333333
+    > Parents                       26.666667
+    > PTPTN                         65.000000
     > ```
   - Allowance
     ```
@@ -1215,7 +1252,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     ```
     > Output:  
     > ![Age Bar Chart](./images/Q5_Bar-age.jpg)
-  - Saving Habit
+  - Faculty
     ```
     jpeg("../images/Q5_Bar-faculty.jpg")
     barplot(faculty.freq, main = "Frequency of Faculty")
@@ -1223,6 +1260,14 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     ```
     > Output:  
     > ![Saving Habit Bar Chart](./images/Q5_Bar-faculty.jpg)
+  - Financial Methods
+    ```
+    jpeg("../images/Q5_Bar-financialMethods.jpg")
+    barplot(financialMethods.freq, main = "Frequency of Financial Mehtods")
+    dev.off()
+    ```
+    > Output:
+    > ![Financial Methods Bar Chart](./images/Q5_Bar-financialMethods.jpg)
   - Allowance
     ```
     jpeg("../images/Q5_Bar-allowance.jpg")
@@ -1337,7 +1382,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     ```
     > Output:  
     > ![Age Pie Chart](./images/Q5_Pie-age.jpg)
-  - Saving Habit
+  - Faculty
     ```
     jpeg("../images/Q5_Pie-faculty.jpg")
     pie(faculty.percentageDist, main="Percentage Distribution of Faculty")
@@ -1345,6 +1390,14 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     ```
     > Output:  
     > ![Saving Habit Pie Chart](./images/Q5_Pie-faculty.jpg)
+  - Financial Methods
+    ```
+    jpeg("../images/Q5_Pie-financialMethods.jpg")
+    pie(financialMethods.percentageDist, main="Percentage Distribution of Financial Methods")
+    dev.off()
+    ```
+    > Output:  
+    > ![Financial Methods Pie Chart](./images/Q5_Pie-financialMethods.jpg)
   - Allowance
     ```
     jpeg("../images/Q5_Pie-allowance.jpg")
@@ -1443,7 +1496,6 @@ We will therefore be discussing the outputs and rationalle behind the commands u
     > ![If often compare prices before making a purchase: Pie Chart](./images/Q5_Pie-comparePrices.jpg)
 
 #### For Q5_2(b)
-- 
 
 #### For Q5_2(c)
 - 
