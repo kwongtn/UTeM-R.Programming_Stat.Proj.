@@ -1238,7 +1238,7 @@ We will therefore be discussing the outputs and rationalle behind the commands u
 - We then generate the bar chart based on the frequencies:
   - Gender
     ```
-    jpeg("../images/Q5_Bar-gender.jpg")
+    jpeg("../images/Q5_Bar-Gender.jpg")
     barplot(gender.freq, main = "Frequency of Gender")
     dev.off()
     ```
