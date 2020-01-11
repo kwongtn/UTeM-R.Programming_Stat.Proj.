@@ -1,7 +1,7 @@
 # UTeM-R.Programming_Stat.Proj.
 
 [Instructions and Questions](./InstructionsAndQuestions.md)  
-[Answers and Rationalle](./Code_Report.md)
+[Answers and Rationalle](./Code_Report.md)  
 [Full report to be submited](./REPORT.md)
 
 ## Preliminary Steps
